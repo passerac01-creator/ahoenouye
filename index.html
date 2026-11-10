@@ -1,0 +1,776 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Ahoénouyé — Farines traditionnelles du Togo</title>
+<meta name="description" content="Ablo, Foufou, Koko, Adowè, Djèdjèviiii, Ema, Akpan… Les farines traditionnelles togolaises préparées comme à la maison. Le goût de chez nous, prêt en quelques minutes. Commandez sur WhatsApp.">
+<meta property="og:title" content="Ahoénouyé — Le goût de la maison, prêt en quelques minutes">
+<meta property="og:description" content="Farines traditionnelles togolaises préparées comme à la maison. Lomé · Diaspora.">
+<meta property="og:image" content="assets/hero.jpg">
+<meta name="theme-color" content="#0E3B22">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Ccircle cx='32' cy='32' r='32' fill='%230E3B22'/%3E%3Cpath d='M18 46c0-16 10-26 28-28 0 18-10 28-28 28z' fill='%23F4C21B'/%3E%3Ccircle cx='44' cy='44' r='7' fill='%23E3262B'/%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,400;0,500;0,600;0,700;0,800;0,900;1,800&family=Caveat:wght@500;600;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --g9:#0B2E1B;
+  --g8:#0E3B22;
+  --g7:#16532F;
+  --g6:#1F6B3D;
+  --g1:#E3EFE0;
+  --mint:#EAF2E6;
+  --red:#E3262B;
+  --red-2:#C81E23;
+  --yellow:#F4C21B;
+  --cream:#F6EFDC;
+  --paper:#FFFDF8;
+  --ink:#13261B;
+  --ink-2:#4B5A50;
+  --line:rgba(19,38,27,.10);
+  --sans:"Poppins", system-ui, -apple-system, "Segoe UI", sans-serif;
+  --hand:"Caveat", "Segoe Print", cursive;
+  --wrap:1220px;
+  --r:20px;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{background:var(--cream);color:var(--ink);font-family:var(--sans);font-size:16px;line-height:1.6;-webkit-font-smoothing:antialiased;overflow-x:hidden}
+img{display:block;max-width:100%}
+a{color:inherit;text-decoration:none}
+button{font:inherit}
+.wrap{max-width:var(--wrap);margin:0 auto;padding-left:max(28px, env(safe-area-inset-left, 0px));padding-right:max(28px, env(safe-area-inset-right, 0px))}
+h1,h2,h3{font-weight:800;letter-spacing:-.025em;line-height:1.04}
+h2{font-size:clamp(34px,4.4vw,58px)}
+.red{color:var(--red)}
+.yel{color:var(--yellow)}
+.eyebrow{font-size:13px;font-weight:600;letter-spacing:.18em;text-transform:uppercase}
+.hand{font-family:var(--hand);font-weight:600;line-height:1.05}
+.sub{color:var(--ink-2);font-size:17px;max-width:52ch}
+
+/* buttons */
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:10px;padding:16px 30px;border-radius:999px;font-weight:700;font-size:16px;transition:transform .3s cubic-bezier(.2,.8,.2,1),background .25s,box-shadow .3s;white-space:nowrap;border:0;cursor:pointer}
+.btn svg{width:20px;height:20px;flex:none}
+.btn .arr{transition:transform .3s}
+.btn:hover .arr{transform:translateX(4px)}
+.btn-red{background:var(--red);color:#fff;box-shadow:0 14px 28px -12px rgba(227,38,43,.75)}
+.btn-red:hover{background:var(--red-2);transform:translateY(-2px)}
+.btn-dark{background:var(--g8);color:#fff}
+.btn-dark:hover{background:var(--g7);transform:translateY(-2px)}
+.btn-white{background:#fff;color:var(--g8)}
+.btn-white:hover{transform:translateY(-2px)}
+.btn-line{border:2px solid rgba(255,255,255,.55);color:#fff;background:transparent}
+.btn-line:hover{background:rgba(255,255,255,.12)}
+
+/* ===== HERO ===== */
+.hero{position:relative;background:var(--g9);color:#fff;overflow:hidden;min-height:720px;display:flex;flex-direction:column}
+.hero-bg{position:absolute;inset:0}
+.hero-bg img{width:100%;height:100%;object-fit:cover;object-position:70% 60%;transform:scale(1.06);transition:transform 2s cubic-bezier(.2,.8,.2,1)}
+.loaded .hero-bg img{transform:scale(1)}
+.hero-bg::after{content:"";position:absolute;inset:0;background:
+  linear-gradient(90deg,rgba(9,40,22,.97) 0%,rgba(9,40,22,.9) 30%,rgba(9,40,22,.45) 55%,rgba(9,40,22,.05) 75%),
+  linear-gradient(0deg,rgba(9,40,22,.75) 0%,transparent 30%),
+  linear-gradient(180deg,rgba(9,40,22,.7) 0%,transparent 18%)}
+header.top{position:relative;z-index:5}
+header.top .wrap{display:flex;align-items:center;justify-content:space-between;height:92px}
+.logo{display:flex;flex-direction:column;line-height:1}
+.logo b{font-family:var(--hand);font-size:40px;font-weight:700;letter-spacing:0;color:#fff;display:flex;align-items:center;gap:6px}
+.logo b i{display:inline-block;width:18px;height:18px;margin-top:-18px}
+.logo span{font-size:9.5px;font-weight:700;letter-spacing:.2em;text-transform:uppercase;color:var(--yellow);margin-top:2px}
+.menu{display:flex;gap:38px;list-style:none;font-size:15px;font-weight:500}
+.menu a{position:relative;padding:6px 0;opacity:.88;transition:opacity .2s}
+.menu a:hover{opacity:1}
+.menu a.on::after,.menu a:hover::after{content:"";position:absolute;left:0;right:0;bottom:-4px;height:2px;border-radius:2px;background:var(--yellow)}
+.top-actions{display:flex;align-items:center;gap:14px}
+.ico-btn{width:44px;height:44px;border-radius:50%;display:grid;place-items:center;border:1.5px solid rgba(255,255,255,.35);transition:background .2s;position:relative}
+.ico-btn:hover{background:rgba(255,255,255,.1)}
+.ico-btn svg{width:20px;height:20px}
+.ico-btn .pip{position:absolute;top:-3px;right:-3px;width:18px;height:18px;border-radius:50%;background:var(--red);font-size:10px;font-weight:700;display:grid;place-items:center}
+.hero-body{position:relative;z-index:2;flex:1;display:flex;align-items:center}
+.hero-body .wrap{width:100%;padding-top:20px;padding-bottom:110px}
+.hero-copy{max-width:600px}
+.hero .eyebrow{color:rgba(255,255,255,.9);display:flex;gap:10px;flex-wrap:wrap}
+.hero .eyebrow i{font-style:normal;color:var(--yellow)}
+.hero h1{font-size:clamp(46px,6.3vw,86px);margin:20px 0 22px;text-shadow:0 2px 30px rgba(0,0,0,.25)}
+.hero h1 .red{color:#FF3B3F}
+.hero p.lead{font-size:18px;color:rgba(255,255,255,.86);max-width:46ch;margin-bottom:34px}
+.hero .cta{display:flex;gap:14px;flex-wrap:wrap}
+.note{position:absolute;z-index:3;color:#fff;font-size:30px;transform:rotate(-6deg);text-shadow:0 2px 14px rgba(0,0,0,.4)}
+.note svg{display:block}
+.note-1{right:7%;top:120px}
+.note-1 svg{width:60px;margin:6px 0 0 120px;transform:rotate(20deg)}
+.hero-stats{position:absolute;left:0;right:0;bottom:0;z-index:3;background:rgba(9,40,22,.72);backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);border-top:1px solid rgba(255,255,255,.1)}
+.hero-stats .wrap{display:flex;justify-content:space-between;align-items:center;gap:24px;height:84px}
+.hs{display:flex;align-items:center;gap:12px}
+.hs b{font-size:28px;font-weight:800;color:var(--yellow);line-height:1}
+.hs span{font-size:13px;color:rgba(255,255,255,.75);line-height:1.3}
+.hs-sep{width:1px;height:34px;background:rgba(255,255,255,.15)}
+
+/* ===== WHY ===== */
+.why{background:var(--cream);padding:110px 0 100px;position:relative;overflow:hidden}
+.why-grid{display:grid;grid-template-columns:1.15fr .85fr;gap:30px;align-items:center}
+.why .hand-tag{position:absolute;color:var(--red);font-size:28px;transform:rotate(-10deg)}
+.why .t1{left:-6px;top:-34px}
+.why .t1 svg{width:54px;position:absolute;right:-60px;top:18px}
+.why h2{margin-bottom:14px;position:relative}
+.feats{display:grid;grid-template-columns:repeat(4,1fr);gap:26px;margin-top:52px}
+.feat .ic{width:62px;height:62px;border-radius:50%;background:var(--g1);border:1.5px solid rgba(31,107,61,.25);display:grid;place-items:center;color:var(--g6);margin-bottom:18px;transition:transform .35s,background .35s,color .35s}
+.feat:hover .ic{transform:translateY(-4px) rotate(-6deg);background:var(--g6);color:#fff}
+.feat .ic svg{width:28px;height:28px}
+.feat h3{font-size:16px;font-weight:700;letter-spacing:-.01em;margin-bottom:6px}
+.feat p{font-size:14px;color:var(--ink-2);line-height:1.55}
+.why-media{position:relative;min-height:440px}
+.why{background:#F7EED9}
+.why-media{margin-right:calc(-1 * (max(0px, (100vw - var(--wrap)) / 2) + 28px))}
+.why-media img{position:relative;z-index:2;width:100%;-webkit-mask-image:linear-gradient(90deg,transparent 0,#000 10%),linear-gradient(180deg,transparent 0,#000 8%,#000 92%,transparent);-webkit-mask-composite:source-in;mask-image:linear-gradient(90deg,transparent 0,#000 10%),linear-gradient(180deg,transparent 0,#000 8%,#000 92%,transparent);mask-composite:intersect}
+.why-media .t2{position:absolute;z-index:3;left:-10px;top:0;color:var(--g8);font-size:30px;transform:rotate(-8deg)}
+.leaf{position:absolute;z-index:3;width:56px;color:var(--g6)}
+
+/* ===== PRODUCTS ===== */
+.products{background:var(--paper);padding:110px 0}
+.sec-top{display:flex;justify-content:space-between;align-items:end;gap:30px;flex-wrap:wrap;margin-bottom:46px}
+.sec-top .hand{color:var(--red);font-size:28px;transform:rotate(-4deg);display:inline-block;margin-bottom:6px}
+.filters{display:flex;gap:10px;flex-wrap:wrap}
+.filters button{font-size:14px;font-weight:600;padding:10px 20px;border-radius:999px;border:1.5px solid var(--line);background:#fff;cursor:pointer;color:var(--ink);transition:all .25s}
+.filters button.on,.filters button:hover{background:var(--g8);border-color:var(--g8);color:#fff}
+.grid-p{display:grid;grid-template-columns:repeat(4,1fr);gap:22px}
+.card{background:#fff;border-radius:var(--r);overflow:hidden;display:flex;flex-direction:column;box-shadow:0 1px 0 var(--line),0 12px 30px -18px rgba(14,59,34,.25);transition:transform .4s cubic-bezier(.2,.8,.2,1),box-shadow .4s}
+.card:hover{transform:translateY(-8px);box-shadow:0 30px 50px -24px rgba(14,59,34,.45)}
+.card .img{aspect-ratio:1/1.08;overflow:hidden;position:relative;background:var(--mint)}
+.card .img img{width:100%;height:100%;object-fit:cover;transition:transform .9s cubic-bezier(.2,.8,.2,1)}
+.card:hover .img img{transform:scale(1.07)}
+.pill{display:inline-flex;align-items:center;font-size:11.5px;font-weight:700;padding:5px 12px;border-radius:999px;color:#fff;background:var(--g6);letter-spacing:.01em}
+.pill.r{background:var(--red)}
+.pill.y{background:var(--yellow);color:var(--ink)}
+.card .pill{position:absolute;top:14px;left:14px}
+.card .body{padding:20px 20px 22px;display:flex;flex-direction:column;flex:1}
+.card h3{font-size:19px;letter-spacing:-.015em}
+.card .for{font-size:12.5px;color:var(--red);font-weight:600;margin:4px 0 10px}
+.card p{font-size:13.5px;color:var(--ink-2);flex:1;line-height:1.55}
+.card .order{margin-top:16px;display:flex;align-items:center;justify-content:space-between;padding:11px 16px;border-radius:12px;background:var(--mint);color:var(--g8);font-weight:700;font-size:14px;transition:background .25s,color .25s}
+.card .order svg{width:18px;height:18px;transition:transform .3s}
+.card:hover .order{background:var(--g8);color:#fff}
+.card:hover .order svg{transform:translateX(4px)}
+.card.hide{display:none}
+.card.feature{grid-column:span 2;flex-direction:row}
+.card.feature .img{aspect-ratio:auto;flex:1.1}
+.card.feature .body{flex:1;padding:30px}
+.card.feature h3{font-size:28px}
+.card.feature p{font-size:15px}
+.card.kit{grid-column:span 2;background:var(--g8) url("assets/gamme.jpg") right center/cover no-repeat;color:#fff;position:relative}
+.card.kit::before{content:"";position:absolute;inset:0;background:linear-gradient(90deg,var(--g8) 38%,rgba(14,59,34,.55) 70%,rgba(14,59,34,.1))}
+.card.kit .body{position:relative;justify-content:center;max-width:62%;padding:34px}
+.card.kit .hand{color:var(--yellow);font-size:28px}
+.card.kit h3{font-size:30px;margin:4px 0 12px}
+.card.kit p{color:rgba(255,255,255,.82);flex:none;margin-bottom:22px;font-size:14.5px}
+.card.kit .btn{align-self:flex-start}
+.card.kit:hover{transform:translateY(-8px)}
+
+/* ===== STORY ===== */
+.story{background:var(--g8);color:#fff;padding:120px 0;position:relative;overflow:hidden}
+.story::before{content:"";position:absolute;width:640px;height:640px;border-radius:50%;background:var(--g7);left:-260px;bottom:-320px;opacity:.6}
+.story-grid{position:relative;display:grid;grid-template-columns:.95fr 1.05fr;gap:80px;align-items:center}
+.story-img{position:relative}
+.story-img img{border-radius:28px;aspect-ratio:4/4.6;object-fit:cover;width:100%;box-shadow:0 40px 70px -30px rgba(0,0,0,.6)}
+.story-img .stamp{position:absolute;right:-24px;bottom:34px;background:var(--yellow);color:var(--ink);border-radius:18px;padding:18px 22px;transform:rotate(4deg);font-size:26px;box-shadow:0 20px 40px -18px rgba(0,0,0,.5);max-width:240px}
+.story .hand{color:var(--yellow);font-size:30px;transform:rotate(-4deg);display:inline-block}
+.story .story-img .stamp{color:var(--ink);font-size:26px;transform:rotate(4deg);display:block}
+.story h2{margin:10px 0 24px}
+.story h2 .yel{color:var(--yellow)}
+.story p{color:rgba(255,255,255,.8);margin-bottom:16px;max-width:54ch;font-size:16.5px}
+.story p strong{color:#fff}
+.steps{display:grid;grid-template-columns:repeat(4,1fr);gap:14px;margin-top:34px}
+.steps div{background:rgba(255,255,255,.07);border:1px solid rgba(255,255,255,.12);border-radius:16px;padding:16px 14px}
+.steps b{display:block;color:var(--yellow);font-size:22px;font-weight:800}
+.steps span{font-size:13px;color:rgba(255,255,255,.85);line-height:1.4;display:block;margin-top:4px}
+
+/* ===== ASKED (mint) ===== */
+.asked{background:var(--mint);padding:110px 0}
+.asked-grid{display:grid;grid-template-columns:.8fr 2.2fr;gap:44px;align-items:center}
+.asked h2{margin-bottom:16px;font-size:clamp(34px,3.5vw,48px)}
+.asked .sub{margin-bottom:28px}
+.qcards{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+.q{background:#fff;border-radius:var(--r);padding:24px;box-shadow:0 18px 40px -26px rgba(14,59,34,.4);display:flex;flex-direction:column;transition:transform .35s}
+.q:hover{transform:translateY(-6px)}
+.q .who{display:flex;align-items:center;gap:12px;margin-bottom:14px}
+.q .av{width:44px;height:44px;border-radius:50%;display:grid;place-items:center;color:#fff;font-weight:800;font-size:15px;flex:none}
+.q .who b{display:block;font-size:14.5px}
+.q .who small{font-size:12px;color:var(--ink-2)}
+.q blockquote{font-size:15.5px;font-weight:600;line-height:1.45;margin-bottom:14px}
+.q .ans{font-size:14px;color:var(--ink-2);border-top:1px dashed var(--line);padding-top:14px;flex:1}
+.q .ans strong{color:var(--g6)}
+.q .pill{margin-top:16px;align-self:flex-start}
+
+/* ===== PERFECT FOR (red band) ===== */
+.band{background:var(--red);color:#fff;position:relative;overflow:hidden}
+.band::before{content:"";position:absolute;inset:0;background:radial-gradient(circle at 15% 50%,rgba(255,255,255,.12),transparent 40%),radial-gradient(circle at 85% 30%,rgba(0,0,0,.12),transparent 45%)}
+.band .wrap{position:relative;display:grid;grid-template-columns:auto 1fr auto;align-items:center;gap:40px;min-height:150px;padding-top:26px;padding-bottom:26px}
+.band .lbl{font-size:36px;transform:rotate(-8deg);display:flex;align-items:center;gap:8px}
+.band .lbl svg{width:46px}
+.uses{display:flex;justify-content:space-around;gap:20px;flex-wrap:wrap}
+.use{display:flex;flex-direction:column;align-items:center;gap:10px;font-size:14px;font-weight:600}
+.use svg{width:36px;height:36px}
+.ticket{background:var(--paper);color:var(--red);font-size:28px;padding:16px 26px;transform:rotate(5deg);box-shadow:0 14px 30px -12px rgba(0,0,0,.35);clip-path:polygon(0 4%,4% 0,96% 2%,100% 0,98% 50%,100% 100%,94% 97%,4% 100%,0 96%,2% 50%);line-height:1.05;text-align:center}
+
+/* ===== DIASPORA ===== */
+.diaspora{background:var(--cream);padding:110px 0}
+.dia-grid{display:grid;grid-template-columns:1.05fr .95fr;gap:70px;align-items:center}
+.dia-img{position:relative}
+.dia-img img{border-radius:28px;width:100%;aspect-ratio:16/11;object-fit:cover;box-shadow:0 30px 60px -30px rgba(0,0,0,.45)}
+.dia-img .flags{position:absolute;left:24px;bottom:-22px;background:#fff;border-radius:999px;padding:10px 18px;font-size:13px;font-weight:600;box-shadow:0 14px 30px -14px rgba(0,0,0,.35);display:flex;gap:8px;align-items:center}
+.dia-img .flags i{width:8px;height:8px;border-radius:50%;background:var(--g6);display:inline-block}
+.diaspora .hand{color:var(--red);font-size:28px;display:inline-block;transform:rotate(-4deg)}
+.diaspora h2{margin:6px 0 18px}
+.how{list-style:none;margin:28px 0 34px;display:grid;gap:16px}
+.how li{display:flex;gap:16px;align-items:flex-start}
+.how li b{flex:none;width:40px;height:40px;border-radius:50%;background:var(--g8);color:var(--yellow);display:grid;place-items:center;font-weight:800}
+.how li h3{font-size:17px;letter-spacing:-.01em}
+.how li p{font-size:14.5px;color:var(--ink-2)}
+
+/* ===== TIKTOK ===== */
+.tiktok{background:var(--paper);padding:110px 0}
+.tt-grid{display:grid;grid-template-columns:repeat(6,1fr);gap:14px}
+.tt{position:relative;border-radius:16px;overflow:hidden;aspect-ratio:9/15;background:#000}
+.tt img{width:100%;height:100%;object-fit:cover;transition:transform .8s}
+.tt:hover img{transform:scale(1.07)}
+.tt::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,transparent 55%,rgba(0,0,0,.78))}
+.tt .v{position:absolute;left:12px;bottom:12px;z-index:2;color:#fff;font-weight:800;font-size:15px;display:flex;align-items:center;gap:6px}
+.tt .v svg{width:13px;height:13px;fill:#fff}
+.tt .top{position:absolute;top:10px;left:10px;z-index:2}
+
+/* ===== OFFER ===== */
+.offer{background:var(--paper);padding:0 0 110px}
+.offer-box{background:var(--yellow);border-radius:32px;display:grid;grid-template-columns:1.1fr .9fr;overflow:hidden;position:relative}
+.offer-box .txt{padding:60px 56px;position:relative;z-index:2}
+.offer-box .hand{font-size:30px;color:var(--red);transform:rotate(-5deg);display:inline-block}
+.offer-box h2{font-size:clamp(40px,5.2vw,74px);margin:8px 0 14px}
+.offer-box p{font-size:16.5px;max-width:42ch;margin-bottom:28px;color:#3A3216}
+.offer-box .img{position:relative;min-height:380px}
+.offer-box .img img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+.burst{position:absolute;z-index:3;right:-64px;top:40px;width:128px;height:128px;border-radius:50%;background:var(--red);color:#fff;display:grid;place-items:center;text-align:center;font-weight:800;line-height:1.05;font-size:15px;transform:rotate(-12deg);box-shadow:0 14px 30px -12px rgba(0,0,0,.4)}
+.burst b{font-size:34px;display:block}
+
+/* ===== FAQ ===== */
+.faq{background:var(--cream);padding:110px 0}
+.faq-grid{display:grid;grid-template-columns:.8fr 1.2fr;gap:70px}
+.faq .hand{color:var(--red);font-size:28px;display:inline-block;transform:rotate(-4deg)}
+details{background:#fff;border-radius:16px;padding:20px 24px;margin-bottom:12px;box-shadow:0 10px 26px -22px rgba(14,59,34,.5)}
+summary{list-style:none;cursor:pointer;display:flex;justify-content:space-between;gap:20px;font-weight:700;font-size:17px;align-items:center}
+summary::-webkit-details-marker{display:none}
+summary::after{content:"+";flex:none;width:30px;height:30px;border-radius:50%;background:var(--mint);color:var(--g6);display:grid;place-items:center;font-size:20px;font-weight:600;transition:transform .3s,background .3s,color .3s}
+details[open] summary::after{transform:rotate(45deg);background:var(--red);color:#fff}
+details p{color:var(--ink-2);padding-top:12px;font-size:15px}
+
+/* ===== FINAL ===== */
+.final{position:relative;background:var(--g8);color:#fff;text-align:center;overflow:hidden}
+.final-bg{position:absolute;inset:0}
+.final-bg img{width:100%;height:100%;object-fit:cover}
+.final-bg::after{content:"";position:absolute;inset:0;background:radial-gradient(ellipse 50% 60% at center,rgba(12,48,28,.55),transparent 80%)}
+.final .wrap{position:relative;z-index:2;padding-top:120px;padding-bottom:120px}
+.final h2{font-size:clamp(38px,5.4vw,70px);max-width:16ch;margin:0 auto 16px}
+.final h2 .red{color:#FF3B3F}
+.final p{color:rgba(255,255,255,.82);font-size:18px;margin:0 auto 34px;max-width:46ch}
+.final .phone{display:block;margin-top:22px;font-weight:700;font-size:20px;color:var(--yellow)}
+.trust{background:var(--g9);color:rgba(255,255,255,.85);border-top:1px solid rgba(255,255,255,.08)}
+.trust .wrap{display:flex;justify-content:center;align-items:center;gap:56px;min-height:88px;flex-wrap:wrap;position:relative;padding-top:18px;padding-bottom:18px}
+.trust div{display:flex;align-items:center;gap:10px;font-size:14px;font-weight:500}
+.trust svg{width:22px;height:22px;color:var(--yellow)}
+.trust .hand{position:absolute;right:28px;top:50%;transform:translateY(-50%) rotate(-6deg);font-size:26px;color:#fff;gap:0}
+footer{background:var(--g9);color:rgba(255,255,255,.55);font-size:13px;border-top:1px solid rgba(255,255,255,.08)}
+footer .wrap{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap;padding-top:24px;padding-bottom:24px}
+footer a:hover{color:#fff}
+
+/* fab */
+.fab{position:fixed;right:calc(20px + env(safe-area-inset-right, 0px));bottom:calc(20px + env(safe-area-inset-bottom, 0px));z-index:60;width:62px;height:62px;border-radius:50%;background:#25D366;display:grid;place-items:center;box-shadow:0 16px 34px -10px rgba(37,211,102,.7);transition:transform .3s}
+.fab:hover{transform:scale(1.08)}
+.fab svg{width:32px;height:32px;fill:#fff}
+.fab::before{content:"";position:absolute;inset:0;border-radius:50%;border:2px solid #25D366;animation:ping 2.4s infinite}
+@keyframes ping{0%{transform:scale(1);opacity:.8}100%{transform:scale(1.6);opacity:0}}
+
+/* reveal */
+.rv{opacity:0;transform:translateY(34px);transition:opacity .9s cubic-bezier(.2,.8,.2,1),transform .9s cubic-bezier(.2,.8,.2,1)}
+.rv.in{opacity:1;transform:none}
+.d1{transition-delay:.08s}.d2{transition-delay:.16s}.d3{transition-delay:.24s}.d4{transition-delay:.32s}
+@keyframes bob{50%{transform:translateY(-8px) rotate(-6deg)}}
+.note{animation:bob 5s ease-in-out infinite}
+@media (prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}.rv{opacity:1;transform:none}}
+
+/* ===== RESPONSIVE ===== */
+@media (max-width:1100px){
+  .menu{display:none}
+  .grid-p{grid-template-columns:repeat(2,1fr)}
+  .why-grid,.story-grid,.dia-grid,.faq-grid,.asked-grid{grid-template-columns:1fr}
+  .why-media{min-height:0;max-width:560px;margin:30px -28px 0 auto}
+  .feats{grid-template-columns:repeat(2,1fr)}
+  .qcards{grid-template-columns:1fr 1fr}
+  .tt-grid{grid-template-columns:repeat(3,1fr)}
+  .band .wrap{grid-template-columns:1fr;justify-items:center;text-align:center;gap:24px}
+  .story-img .stamp{right:14px}
+  .note-1{display:none}
+  .trust .hand{display:none}
+  .offer-box{grid-template-columns:1fr}
+  .offer-box .img{min-height:300px;order:-1}
+  .burst{right:20px;top:-52px}
+  .offer-box .txt{padding-top:70px}
+}
+@media (max-width:720px){
+  body{font-size:15.5px}
+  .wrap{padding-left:max(16px, env(safe-area-inset-left, 0px));padding-right:max(16px, env(safe-area-inset-right, 0px))}
+  header.top .wrap{height:74px}
+  .logo b{font-size:32px}
+  .ico-btn.hide-m{display:none}
+  .hero{min-height:0}
+  .hero-bg img{object-position:72% 50%}
+  .hero-bg::after{background:linear-gradient(180deg,rgba(9,40,22,.92) 0%,rgba(9,40,22,.78) 50%,rgba(9,40,22,.55) 100%)}
+  .hero-body .wrap{padding-top:30px;padding-bottom:200px}
+  .hero p.lead{font-size:16px}
+  .hero .cta .btn{flex:1}
+  .hero-stats .wrap{height:auto;padding-top:16px;padding-bottom:16px;display:grid;grid-template-columns:1fr 1fr 1fr;gap:10px}
+  .hs{flex-direction:column;align-items:flex-start;gap:4px}
+  .hs b{font-size:22px}
+  .hs span{font-size:11px}
+  .hs-sep{display:none}
+  .why,.products,.story,.asked,.diaspora,.tiktok,.faq{padding:80px 0}
+  .feats{grid-template-columns:1fr 1fr;gap:22px}
+  .grid-p,.qcards{grid-template-columns:1fr}
+  .card.feature{grid-column:auto;flex-direction:column}
+  .card.feature .img{aspect-ratio:1/1}
+  .card.feature .body{padding:22px}
+  .card.kit{grid-column:auto}
+  .card.kit .body{max-width:none;padding:28px 22px}
+  .card.kit::before{background:linear-gradient(180deg,rgba(14,59,34,.95) 50%,rgba(14,59,34,.7))}
+  .steps{grid-template-columns:1fr 1fr}
+  .tt-grid{grid-template-columns:repeat(2,1fr)}
+  .uses{display:grid;grid-template-columns:repeat(2,1fr);gap:20px 30px}
+  .offer-box .txt{padding:60px 24px 40px}
+  .burst{width:104px;height:104px;font-size:13px}
+  .burst b{font-size:28px}
+  .why-media{margin-right:-16px}
+  .dia-img .flags{left:12px;right:12px;font-size:11.5px;padding:9px 14px;bottom:-26px}
+  .why .t1{position:static;display:inline-block;margin-bottom:10px}
+  .why .t1 svg{display:none}
+  .trust .wrap{gap:14px 26px;justify-content:flex-start}
+  .final .wrap{padding-top:90px;padding-bottom:90px}
+  .btn{padding:15px 22px}
+}
+</style>
+</head>
+<body>
+
+<!-- ===================== HERO ===================== -->
+<section class="hero" id="top">
+  <div class="hero-bg"><img src="assets/hero.jpg" alt="Les farines Ahoénouyé sur une table en bois, entourées d'ablo, de piments et de grains" fetchpriority="high"></div>
+
+  <header class="top">
+    <div class="wrap">
+      <a href="#top" class="logo" aria-label="Ahoénouyé, accueil">
+        <b>Ahoénouyé<i><svg viewBox="0 0 24 24" fill="#7BC043"><path d="M4 20C4 10 10 4 21 3c0 11-6 17-17 17z"/></svg></i></b>
+        <span>Le goût de chez nous</span>
+      </a>
+      <ul class="menu">
+        <li><a class="on" href="#top">Accueil</a></li>
+        <li><a href="#farines">Nos farines</a></li>
+        <li><a href="#histoire">Notre histoire</a></li>
+        <li><a href="#questions">Vos questions</a></li>
+        <li><a href="#diaspora">Diaspora</a></li>
+      </ul>
+      <div class="top-actions">
+        <a class="ico-btn hide-m" href="https://www.tiktok.com/@ahoenou4" target="_blank" rel="noopener" aria-label="TikTok"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M16.6 5.82A4.28 4.28 0 0 1 15.54 3h-3.09v12.4a2.59 2.59 0 0 1-2.59 2.5c-1.42 0-2.6-1.16-2.6-2.6 0-1.72 1.66-3.01 3.37-2.48V9.66c-3.45-.46-6.47 2.22-6.47 5.64 0 3.33 2.76 5.7 5.69 5.7 3.14 0 5.69-2.55 5.69-5.7V9.01a7.35 7.35 0 0 0 4.3 1.38V7.3s-1.88.09-3.24-1.48z"/></svg></a>
+        <a class="ico-btn wa" data-msg="Bonjour Ahoénouyé, je souhaite passer une commande." href="#" aria-label="Commander sur WhatsApp"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 6h15l-1.5 9h-12z"/><path d="M6 6 5 3H2"/><circle cx="9" cy="20" r="1.4"/><circle cx="18" cy="20" r="1.4"/></svg><span class="pip">9</span></a>
+      </div>
+    </div>
+  </header>
+
+  <div class="hero-body">
+    <div class="wrap">
+      <div class="hero-copy">
+        <div class="eyebrow rv">Naturel <i>•</i> Traditionnel <i>•</i> Fait au Togo</div>
+        <h1 class="rv d1">Le goût de la maison, <span class="red">sans la corvée.</span></h1>
+        <p class="lead rv d2">Ablo, Foufou, Koko, Adowè, Kom… Nous faisons le long travail de nos mères — trier, laver, fermenter, sécher, moudre. Vous, vous n'avez plus qu'à cuisiner. Et à retrouver ce goût-là. Le vrai.</p>
+        <div class="cta rv d3">
+          <a class="btn btn-red wa" data-msg="Bonjour Ahoénouyé, je souhaite commander vos farines." href="#">Commander maintenant <svg class="arr" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+          <a class="btn btn-line" href="#farines">Voir les farines</a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="note note-1 hand" aria-hidden="true">Vraies céréales.<br>&nbsp;&nbsp;Vrai goût.
+    <svg viewBox="0 0 60 40" fill="none" stroke="#fff" stroke-width="2.5" stroke-linecap="round"><path d="M4 4c10 20 26 28 48 26"/><path d="M42 22l10 8-12 4"/></svg>
+  </div>
+
+  <div class="hero-stats">
+    <div class="wrap">
+      <div class="hs rv"><b data-count="19000">19K</b><span>abonnés<br>sur TikTok</span></div>
+      <span class="hs-sep"></span>
+      <div class="hs rv d1"><b data-count="84900">84,9K</b><span>j'aime sur<br>nos recettes</span></div>
+      <span class="hs-sep"></span>
+      <div class="hs rv d2"><b data-count="327900">327,9K</b><span>vues sur une<br>seule vidéo</span></div>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== WHY ===================== -->
+<section class="why" id="pourquoi">
+  <div class="wrap why-grid">
+    <div>
+      <div style="position:relative">
+        <span class="hand hand-tag t1 rv">Plus qu'une farine
+          <svg viewBox="0 0 60 30" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"><path d="M3 6c14 2 30 8 44 18"/><path d="M38 24l10 1-3-10"/></svg>
+        </span>
+        <h2 class="rv d1">Pourquoi les familles <span class="red">l'adoptent</span></h2>
+      </div>
+      <p class="sub rv d2">Parce que vous méritez de bien manger, sans y passer trois jours.</p>
+      <div class="feats">
+        <div class="feat rv">
+          <div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M5 19c0-9 6-14 15-15 0 9-5 15-15 15z"/><path d="M5 19 13 11"/></svg></div>
+          <h3>Ingrédients naturels</h3><p>Maïs, mil, sorgho, haricots, igname, datte, souchet. Rien que vous ne sauriez prononcer.</p>
+        </div>
+        <div class="feat rv d1">
+          <div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="13" r="8"/><path d="M12 9v4l3 2M9 2h6"/></svg></div>
+          <h3>Des jours gagnés</h3><p>Trempage, fermentation, séchage, mouture : c'est fait. Il ne reste que l'eau et la cuisson.</p>
+        </div>
+        <div class="feat rv d2">
+          <div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 20s-7-4.5-7-10a4 4 0 0 1 7-2.6A4 4 0 0 1 19 10c0 5.5-7 10-7 10z"/></svg></div>
+          <h3>Nourrissant</h3><p>Des céréales et légumineuses complètes, pour les grands comme pour les tout-petits.</p>
+        </div>
+        <div class="feat rv d3">
+          <div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M8 14s1.5 2 4 2 4-2 4-2"/><path d="M9 9.5h.01M15 9.5h.01"/></svg></div>
+          <h3>Le vrai goût</h3><p>Celui de la cour de la maison, des dimanches à Lomé. Pas une imitation industrielle.</p>
+        </div>
+      </div>
+    </div>
+    <div class="why-media rv d2">
+      <span class="t2 hand">Moelleux,<br>comme chez maman !</span>
+      <img src="assets/bowl.jpg" alt="Bol d'ablo moelleux préparé avec la farine Ahoénouyé" loading="lazy">
+    </div>
+  </div>
+</section>
+
+<!-- ===================== PRODUCTS ===================== -->
+<section class="products" id="farines">
+  <div class="wrap">
+    <div class="sec-top">
+      <div>
+        <span class="hand rv">Une farine, mille souvenirs</span>
+        <h2 class="rv d1">Nos farines <span class="red">stars</span></h2>
+      </div>
+      <div class="filters rv d2" aria-label="Filtrer les farines">
+        <button class="on" data-f="all">Tout</button>
+        <button data-f="plat">Plats</button>
+        <button data-f="bouillie">Bouillies</button>
+        <button data-f="beignet">Beignets</button>
+      </div>
+    </div>
+    <div class="grid-p">
+      <article class="card feature rv" data-cat="plat">
+        <div class="img"><img src="assets/ablo.jpg" alt="Farine d'Ablo Ahoénouyé avec ablo et poisson frit" loading="lazy"><span class="pill r">Best-seller</span></div>
+        <div class="body">
+          <h3>Farine d'Ablo accomplie</h3>
+          <div class="for">Pour : ablo moelleux du dimanche</div>
+          <p>Le pain vapeur blanc, léger, légèrement sucré — servi avec poisson frit et piment. Notre farine est déjà travaillée : pas de fermentation à gérer, vos ablo gonflent et restent moelleux. C'est la farine qui a fait connaître Ahoénouyé.</p>
+          <a class="order wa" data-msg="Bonjour Ahoénouyé, je souhaite commander la Farine d'Ablo." href="#">Commander l'Ablo <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+        </div>
+      </article>
+      <article class="card rv d1" data-cat="plat">
+        <div class="img"><img src="assets/foufou.jpg" alt="Foufou d'igname préparé avec la farine Ahoénouyé" loading="lazy"><span class="pill r">327K vues</span></div>
+        <div class="body">
+          <h3>Farine de Foufou</h3>
+          <div class="for">Pour : foufou d'igname</div>
+          <p>Un foufou lisse et élastique sans pilon ni mortier. La vidéo qui a fait le tour de TikTok.</p>
+          <a class="order wa" data-msg="Bonjour Ahoénouyé, je souhaite commander la Farine de Foufou." href="#">Commander <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+        </div>
+      </article>
+      <article class="card rv d2" data-cat="bouillie">
+        <div class="img"><img src="assets/djedjevi.jpg" alt="Farine infantile Djèdjèviiii et bouillie" loading="lazy"><span class="pill y">Bébé</span></div>
+        <div class="body">
+          <h3>Djèdjèviiii</h3>
+          <div class="for">« Ma première farine »</div>
+          <p>Farine infantile naturellement sucrée à la datte, au souchet et à la patate douce.</p>
+          <a class="order wa" data-msg="Bonjour Ahoénouyé, je souhaite commander la farine infantile Djèdjèviiii." href="#">Commander <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+        </div>
+      </article>
+      <article class="card rv" data-cat="bouillie">
+        <div class="img"><img src="assets/koko.jpg" alt="Farine pour Koko et bouillie de mil" loading="lazy"><span class="pill">Petit-déj</span></div>
+        <div class="body">
+          <h3>Farine pour Koko</h3>
+          <div class="for">Pour : koko, haoussa koko</div>
+          <p>Le koko épicé du matin, celui du coin de la rue avec ses beignets. Lisse et parfumé.</p>
+          <a class="order wa" data-msg="Bonjour Ahoénouyé, je souhaite commander la Farine pour Koko." href="#">Commander <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+        </div>
+      </article>
+      <article class="card rv d1" data-cat="beignet plat">
+        <div class="img"><img src="assets/adowe.jpg" alt="Farine Adowè et beignets de haricot" loading="lazy"><span class="pill">Haricot</span></div>
+        <div class="body">
+          <h3>Adowè & Haricots</h3>
+          <div class="for">Pour : gaou, gaoufoto, adowè, timbani</div>
+          <p>Haricots décortiqués et moulus : fini l'épluchage. Des beignets dorés et aériens.</p>
+          <a class="order wa" data-msg="Bonjour Ahoénouyé, je souhaite commander la Farine Adowè / farine d'haricots." href="#">Commander <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+        </div>
+      </article>
+      <article class="card rv d2" data-cat="plat">
+        <div class="img"><img src="assets/ema.jpg" alt="Ema déshydraté pour kom" loading="lazy"><span class="pill r">Diaspora</span></div>
+        <div class="body">
+          <h3>Ema déshydraté</h3>
+          <div class="for">Pour : kom, emakoumé</div>
+          <p>La pâte de maïs fermentée, déshydratée pour voyager. Le vrai kom, même à 6 000 km.</p>
+          <a class="order wa" data-msg="Bonjour Ahoénouyé, je souhaite commander l'Ema déshydraté." href="#">Commander <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+        </div>
+      </article>
+      <article class="card rv d3" data-cat="bouillie">
+        <div class="img"><img src="assets/maizena.jpg" alt="Farine Maïzena pour akpan" loading="lazy"><span class="pill">Fraîcheur</span></div>
+        <div class="body">
+          <h3>Maïzena (Akpan)</h3>
+          <div class="for">Pour : akpan, kafa</div>
+          <p>Votre akpan maison, onctueux et rafraîchissant, avec du lait et des glaçons.</p>
+          <a class="order wa" data-msg="Bonjour Ahoénouyé, je souhaite commander la Farine Maïzena pour Akpan." href="#">Commander <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+        </div>
+      </article>
+      <article class="card rv" data-cat="plat">
+        <div class="img"><img src="assets/djinkoume.jpg" alt="Djinkoumé à la noix de coco" loading="lazy"><span class="pill y">Coco</span></div>
+        <div class="body">
+          <h3>Djinkoumé coco</h3>
+          <div class="for">Pour : djinkoumé à la noix de coco</div>
+          <p>La pâte rouge des fêtes, parfumée à la coco. Possible même un mardi soir.</p>
+          <a class="order wa" data-msg="Bonjour Ahoénouyé, je souhaite commander la Farine de Djinkoumé à la noix de coco." href="#">Commander <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+        </div>
+      </article>
+      <article class="card rv d1" data-cat="bouillie">
+        <div class="img"><img src="assets/aklui.jpg" alt="Aklui zogbon et bouillie" loading="lazy"><span class="pill">VIP</span></div>
+        <div class="body">
+          <h3>Aklui Zogbon</h3>
+          <div class="for">Pour : bouillie aklui</div>
+          <p>Les petites billes roulées à la main. Avec des arachides grillées, un souvenir d'enfance.</p>
+          <a class="order wa" data-msg="Bonjour Ahoénouyé, je souhaite commander l'Aklui Zogbon." href="#">Commander <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+        </div>
+      </article>
+      <article class="card kit rv d2" data-cat="plat bouillie beignet">
+        <div class="body">
+          <span class="hand">Vous hésitez ?</span>
+          <h3>Composez votre <span class="yel">Kit Découverte</span></h3>
+          <p>2, 3 ou 5 farines au choix, pour goûter à tout — ou pour offrir à quelqu'un qui a le mal du pays. Dites-nous ce que vous aimez, on vous conseille.</p>
+          <a class="btn btn-red wa" data-msg="Bonjour Ahoénouyé, je souhaite composer un Kit Découverte." href="#">Composer mon kit <svg class="arr" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+        </div>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== STORY ===================== -->
+<section class="story" id="histoire">
+  <div class="wrap story-grid">
+    <div class="story-img rv">
+      <img src="assets/mains.jpg" alt="Mains d'une cuisinière togolaise travaillant une pâte de farine" loading="lazy">
+      <div class="stamp hand">Ce que nos mères faisaient en 3 jours, on le met dans un pot.</div>
+    </div>
+    <div>
+      <span class="hand rv">Notre histoire</span>
+      <h2 class="rv d1">La cuisine de chez nous, <span class="yel">mise en pot.</span></h2>
+      <p class="rv d2">Tout est parti d'une cuisine à Lomé et d'une conviction : <strong>nos plats traditionnels méritent mieux que des raccourcis.</strong> Mais la vie d'aujourd'hui ne laisse plus le temps de passer des jours sur une farine.</p>
+      <p class="rv d2">Alors on le fait pour vous, à la main, comme on l'a appris. Des milliers de familles nous regardent cuisiner chaque semaine sur TikTok — au Togo, au Bénin, au Ghana, au Gabon, en Côte d'Ivoire, aux États-Unis… Elles reviennent pour une seule raison : <strong>ça a le goût de la maison.</strong></p>
+      <div class="steps rv d3">
+        <div><b>01</b><span>Grains triés un à un</span></div>
+        <div><b>02</b><span>Lavés & fermentés à l'ancienne</span></div>
+        <div><b>03</b><span>Séchés & moulus finement</span></div>
+        <div><b>04</b><span>Prêts chez vous en minutes</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== QUESTIONS (vraies) ===================== -->
+<section class="asked" id="questions">
+  <div class="wrap asked-grid">
+    <div>
+      <h2 class="rv">Vous nous <span class="red">le demandez</span> chaque jour</h2>
+      <p class="sub rv d1">Des centaines de commentaires sous nos vidéos. Voici enfin les réponses.</p>
+      <a class="btn btn-dark wa rv d2" data-msg="Bonjour Ahoénouyé, j'ai une question." href="#">Poser ma question <svg class="arr" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+    </div>
+    <div class="qcards">
+      <div class="q rv">
+        <div class="who"><span class="av" style="background:#1F6B3D">?</span><div><b>« C'est combien et vous êtes où ? »</b><small>Question n°1 sur TikTok</small></div></div>
+        <blockquote>« Donnez-nous les prix au moins ! »</blockquote>
+        <div class="ans"><strong>Réponse :</strong> on est à Lomé. Un message WhatsApp et on vous envoie la liste des prix du jour, les formats et le point de retrait ou de livraison.</div>
+        <span class="pill">Toutes les farines</span>
+      </div>
+      <div class="q rv d1">
+        <div class="who"><span class="av" style="background:#E3262B">✈</span><div><b>« Comment l'avoir chez moi ? »</b><small>Gabon, Abidjan, USA…</small></div></div>
+        <blockquote>« Je peux trouver ça où ? Je suis au Gabon. »</blockquote>
+        <div class="ans"><strong>Réponse :</strong> nos farines sont sèches et voyagent bien. Donnez-nous votre pays et votre ville, on vous propose la meilleure solution d'envoi.</div>
+        <span class="pill r">Diaspora</span>
+      </div>
+      <div class="q rv d2">
+        <div class="who"><span class="av" style="background:#F4C21B;color:#13261B">♥</span><div><b>« Ça ne fait pas grossir ? »</b><small>Sur la farine Djèdjèviiii</small></div></div>
+        <blockquote>« Tout ça dans une seule chose ? Waooo ! »</blockquote>
+        <div class="ans"><strong>Réponse :</strong> sa douceur vient de la datte, du souchet et de la patate douce. Comme toute bouillie, tout est question de portion — on vous conseille les bons dosages.</div>
+        <span class="pill y">Djèdjèviiii</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== PERFECT FOR ===================== -->
+<section class="band">
+  <div class="wrap">
+    <div class="lbl hand">Parfait pour…
+      <svg viewBox="0 0 50 20" fill="none" stroke="#fff" stroke-width="2.4" stroke-linecap="round"><path d="M2 10c12-6 26-6 42 0"/><path d="M36 4l8 6-9 4"/></svg>
+    </div>
+    <div class="uses">
+      <div class="use rv"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M4 9h13v5a6 6 0 0 1-6 6h-1a6 6 0 0 1-6-6z"/><path d="M17 11h1.5a2.5 2.5 0 0 1 0 5H16M8 2v3M12 2v3"/></svg>Le petit-déj</div>
+      <div class="use rv d1"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="9" r="5"/><path d="M10 8h.01M14 8h.01M10.5 11s.6.8 1.5.8 1.5-.8 1.5-.8M6 22c0-3.3 2.7-6 6-6s6 2.7 6 6"/></svg>Bébé</div>
+      <div class="use rv d2"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M3 11h18v3H3zM5 14v7h14v-7M12 11v10M12 11S9.5 4 7 6s5 5 5 5zM12 11s2.5-7 5-5-5 5-5 5z"/></svg>Fêtes & dimanches</div>
+      <div class="use rv d3"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M3 11 12 4l9 7"/><path d="M5 10v10h14V10"/><path d="M10 20v-5h4v5"/></svg>À la maison</div>
+      <div class="use rv d4"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M17.8 19.2 16 11l3.5-3.5C21 6 21.5 4 21 3c-1-.5-3 0-4.5 1.5L13 8 4.8 6.2c-.5-.1-.9.1-1.1.5l-.3.5c-.2.5-.1 1 .3 1.3L9 12l-2 3H4l-1 1 3 2 2 3 1-1v-3l3-2 3.5 5.3c.3.4.8.5 1.3.3l.5-.2c.4-.3.6-.7.5-1.2z"/></svg>La diaspora</div>
+    </div>
+    <div class="ticket hand">Le même goût.<br>Partout.</div>
+  </div>
+</section>
+
+<!-- ===================== DIASPORA ===================== -->
+<section class="diaspora" id="diaspora">
+  <div class="wrap dia-grid">
+    <div class="dia-img rv">
+      <img src="assets/diaspora.jpg" alt="Une femme ouvre un colis de farines Ahoénouyé dans sa cuisine" loading="lazy">
+      <div class="flags"><i></i>Togo · Bénin · Ghana · Gabon · Côte d'Ivoire · Europe · USA</div>
+    </div>
+    <div>
+      <span class="hand rv">Loin du pays ?</span>
+      <h2 class="rv d1">Jamais loin <span class="red">de chez soi.</span></h2>
+      <p class="sub rv d2">Il y a des goûts qui vous ramènent instantanément aux voix de la famille et aux dimanches à Lomé. Commander est aussi simple qu'un message.</p>
+      <ul class="how">
+        <li class="rv"><b>1</b><div><h3>Choisissez vos farines</h3><p>Ou demandez-nous un kit adapté à votre famille.</p></div></li>
+        <li class="rv d1"><b>2</b><div><h3>Écrivez-nous sur WhatsApp</h3><p>On confirme prix, quantités et livraison — on répond vraiment.</p></div></li>
+        <li class="rv d2"><b>3</b><div><h3>Cuisinez avec nous</h3><p>Suivez nos recettes en vidéo et retrouvez le goût de la maison.</p></div></li>
+      </ul>
+      <a class="btn btn-red wa rv d3" data-msg="Bonjour Ahoénouyé, je vis à l'étranger et je souhaite commander. Je suis à : " href="#">Commander depuis l'étranger <svg class="arr" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== TIKTOK ===================== -->
+<section class="tiktok">
+  <div class="wrap">
+    <div class="sec-top">
+      <div>
+        <span class="hand rv">Regardez, salivez, cuisinez</span>
+        <h2 class="rv d1">Vu par <span class="red">des centaines de milliers</span></h2>
+      </div>
+      <a class="btn btn-dark rv d2" href="https://www.tiktok.com/@ahoenou4" target="_blank" rel="noopener">Suivre @ahoenou4</a>
+    </div>
+    <div class="tt-grid">
+      <a class="tt rv" href="https://www.tiktok.com/@ahoenou4/video/7617986306685013269" target="_blank" rel="noopener"><img src="assets/tt-1.jpg" alt="Vidéo TikTok : farine de foufou" loading="lazy"><span class="pill r top">Foufou</span><span class="v"><svg viewBox="0 0 24 24"><path d="M6 4l14 8-14 8z"/></svg>327,9K</span></a>
+      <a class="tt rv d1" href="https://www.tiktok.com/@ahoenou4/video/7653119239993265426" target="_blank" rel="noopener"><img src="assets/tt-2.jpg" alt="Vidéo TikTok Ahoénouyé" loading="lazy"><span class="v"><svg viewBox="0 0 24 24"><path d="M6 4l14 8-14 8z"/></svg>169,2K</span></a>
+      <a class="tt rv d2" href="https://www.tiktok.com/@ahoenou4/video/7593795726837173515" target="_blank" rel="noopener"><img src="assets/tt-3.jpg" alt="Vidéo TikTok : gaoufoto" loading="lazy"><span class="pill top">Gaoufoto</span><span class="v"><svg viewBox="0 0 24 24"><path d="M6 4l14 8-14 8z"/></svg>165,6K</span></a>
+      <a class="tt rv d3" href="https://www.tiktok.com/@ahoenou4/video/7648191631224556807" target="_blank" rel="noopener"><img src="assets/tt-4.jpg" alt="Vidéo TikTok : farine bien-être" loading="lazy"><span class="pill y top">Bien-être</span><span class="v"><svg viewBox="0 0 24 24"><path d="M6 4l14 8-14 8z"/></svg>90,3K</span></a>
+      <a class="tt rv d1" href="https://www.tiktok.com/@ahoenou4/video/7595367510350777612" target="_blank" rel="noopener"><img src="assets/tt-5.jpg" alt="Vidéo TikTok : ema déshydraté" loading="lazy"><span class="pill top">Ema</span><span class="v"><svg viewBox="0 0 24 24"><path d="M6 4l14 8-14 8z"/></svg>76,6K</span></a>
+      <a class="tt rv d2" href="https://www.tiktok.com/@ahoenou4/video/7681279756523916551" target="_blank" rel="noopener"><img src="assets/tt-6.jpg" alt="Vidéo TikTok : farine Adowè" loading="lazy"><span class="pill top">Adowè</span><span class="v"><svg viewBox="0 0 24 24"><path d="M6 4l14 8-14 8z"/></svg>69,5K</span></a>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== OFFER ===================== -->
+<section class="offer" id="offre">
+  <div class="wrap">
+    <div class="offer-box rv">
+      <div class="txt">
+        <div class="burst"><div><b>+500g</b>offerts</div></div>
+        <span class="hand">Offre du moment</span>
+        <h2>2,5 kg au prix <span class="red">de 2 kg.</span></h2>
+        <p>Faites le plein avant les fêtes, les visites de famille et les dimanches à rallonge. Offre limitée sur une sélection de farines — demandez lesquelles sur WhatsApp.</p>
+        <a class="btn btn-red wa" data-msg="Bonjour Ahoénouyé, je souhaite profiter de l'offre 2,5 kg au prix de 2 kg." href="#">J'en profite <svg class="arr" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+      </div>
+      <div class="img"><img src="assets/gamme.jpg" alt="La gamme des farines Ahoénouyé" loading="lazy"></div>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== FAQ ===================== -->
+<section class="faq" id="faq">
+  <div class="wrap faq-grid">
+    <div>
+      <span class="hand rv">On vous répond</span>
+      <h2 class="rv d1">Questions <span class="red">fréquentes</span></h2>
+      <p class="sub rv d2" style="margin-top:14px">Une autre question ? Écrivez-nous, on répond vite.</p>
+    </div>
+    <div class="rv d1">
+      <details open><summary>Comment je commande ?</summary><p>Cliquez sur n'importe quel bouton « Commander » : WhatsApp s'ouvre avec un message prêt à envoyer. On vous confirme prix, disponibilité et livraison.</p></details>
+      <details><summary>Où êtes-vous situés ?</summary><p>À Lomé, au Togo. Écrivez-nous sur WhatsApp pour l'adresse exacte du point de retrait ou pour une livraison.</p></details>
+      <details><summary>Livrez-vous hors du Togo ?</summary><p>Nos farines sont commandées au Togo, au Bénin, au Ghana et dans toute la diaspora. Donnez-nous votre pays et votre ville : on vous indique la meilleure solution d'envoi.</p></details>
+      <details><summary>Est-ce difficile à préparer ?</summary><p>Non, c'est tout l'intérêt : le long travail est déjà fait. Chaque farine s'accompagne de conseils, et nos vidéos TikTok montrent chaque recette pas à pas.</p></details>
+      <details><summary>Comment conserver les farines ?</summary><p>Dans leur pot bien fermé, au sec, à l'abri de la chaleur et de l'humidité. Les farines séchées comme l'Ema sont pensées pour se garder et voyager.</p></details>
+      <details><summary>Djèdjèviiii convient à quel âge ?</summary><p>Demandez-nous conseil sur WhatsApp : on vous indique l'âge recommandé, le dosage et la préparation. En cas de doute, l'avis de votre pédiatre reste la référence.</p></details>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== FINAL ===================== -->
+<section class="final">
+  <div class="final-bg"><img src="assets/cta-bg.jpg" alt="" loading="lazy"></div>
+  <div class="wrap">
+    <h2 class="rv">Prêt à manger <span class="red">comme à la maison ?</span></h2>
+    <p class="rv d1">Choisissez votre farine, envoyez-nous un message. On s'occupe du reste.</p>
+    <a class="btn btn-red wa rv d2" data-msg="Bonjour Ahoénouyé, je souhaite commander vos farines." href="#">Commander sur WhatsApp <svg class="arr" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+    <a class="phone rv d3" href="tel:+22879428555">+228 79 42 85 55</a>
+  </div>
+</section>
+
+<div class="trust">
+  <div class="wrap">
+    <div><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M1 4h14v12H1zM15 9h4l3 3v4h-7"/><circle cx="5.5" cy="18.5" r="1.8"/><circle cx="18.5" cy="18.5" r="1.8"/></svg>Lomé & expédition diaspora</div>
+    <div><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12a9 9 0 0 1-13.5 7.8L3 21l1.2-4.5A9 9 0 1 1 21 12z"/></svg>Commande simple sur WhatsApp</div>
+    <div><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M5 19c0-9 6-14 15-15 0 9-5 15-15 15z"/><path d="M5 19 13 11"/></svg>100% ingrédients naturels</div>
+    <span class="hand">Bon goût,<br>bonne humeur</span>
+  </div>
+</div>
+<footer>
+  <div class="wrap">
+    <div>© Ahoénouyé · Farines traditionnelles · Lomé, Togo</div>
+    <div><a href="https://www.tiktok.com/@ahoenou4" target="_blank" rel="noopener">TikTok @ahoenou4</a> · <a href="tel:+22879428555">+228 79 42 85 55</a></div>
+  </div>
+</footer>
+
+<a class="fab wa" data-msg="Bonjour Ahoénouyé, j'ai une question sur vos farines." href="#" aria-label="Nous écrire sur WhatsApp"><svg viewBox="0 0 24 24"><path d="M17.47 14.38c-.3-.15-1.76-.87-2.03-.97-.27-.1-.47-.15-.67.15-.2.3-.77.97-.94 1.17-.17.2-.35.22-.64.07-.3-.15-1.26-.46-2.4-1.48-.89-.79-1.49-1.77-1.66-2.07-.17-.3-.02-.46.13-.61.13-.13.3-.35.45-.52.15-.17.2-.3.3-.5.1-.2.05-.37-.03-.52-.07-.15-.67-1.61-.92-2.21-.24-.58-.49-.5-.67-.51h-.57c-.2 0-.52.07-.79.37-.27.3-1.04 1.02-1.04 2.48s1.07 2.88 1.21 3.08c.15.2 2.1 3.2 5.08 4.49.71.31 1.26.49 1.69.63.71.23 1.36.2 1.87.12.57-.09 1.76-.72 2.01-1.41.25-.7.25-1.29.17-1.41-.07-.13-.27-.2-.57-.35zM12.04 21.8h-.01a9.87 9.87 0 01-5.03-1.38l-.36-.21-3.74.98 1-3.65-.24-.37a9.86 9.86 0 01-1.51-5.26c0-5.45 4.44-9.88 9.9-9.88 2.64 0 5.12 1.03 6.99 2.9a9.82 9.82 0 012.89 6.99c0 5.45-4.44 9.88-9.89 9.88zm8.41-18.3A11.82 11.82 0 0012.04 0C5.5 0 .16 5.33.16 11.89c0 2.1.55 4.14 1.59 5.95L.06 24l6.3-1.65a11.88 11.88 0 005.68 1.45h.01c6.55 0 11.89-5.33 11.89-11.89 0-3.18-1.24-6.16-3.49-8.41z"/></svg></a>
+
+<script>
+(function(){
+  var PHONE = "22879428555";
+  document.querySelectorAll(".wa").forEach(function(a){
+    a.href = "https://wa.me/" + PHONE + "?text=" + encodeURIComponent(a.getAttribute("data-msg") || "Bonjour Ahoénouyé");
+    a.target = "_blank"; a.rel = "noopener";
+  });
+
+  var io = "IntersectionObserver" in window ? new IntersectionObserver(function(es){
+    es.forEach(function(e){ if(e.isIntersecting){ e.target.classList.add("in"); io.unobserve(e.target); } });
+  }, {threshold:.12, rootMargin:"0px 0px -40px 0px"}) : null;
+  document.querySelectorAll(".rv").forEach(function(el){ io ? io.observe(el) : el.classList.add("in"); });
+  window.addEventListener("load", function(){ document.body.classList.add("loaded"); });
+
+  var btns = document.querySelectorAll(".filters button");
+  btns.forEach(function(b){
+    b.addEventListener("click", function(){
+      btns.forEach(function(x){ x.classList.remove("on"); }); b.classList.add("on");
+      var f = b.getAttribute("data-f");
+      document.querySelectorAll(".card").forEach(function(c){
+        var show = f === "all" || (c.getAttribute("data-cat") || "").split(" ").indexOf(f) > -1;
+        c.classList.toggle("hide", !show);
+        if (show) c.classList.add("in");
+      });
+    });
+  });
+
+  function fmt(n){ return n >= 1000 ? (n/1000).toFixed(1).replace(/\.0$/,"").replace(".",",") + "K" : String(n); }
+  var stats = document.querySelector(".hero-stats");
+  if (stats && io && !matchMedia("(prefers-reduced-motion: reduce)").matches){
+    new IntersectionObserver(function(es, o){
+      if (!es[0].isIntersecting) return; o.disconnect();
+      stats.querySelectorAll("[data-count]").forEach(function(el){
+        var end = +el.getAttribute("data-count"), t0 = performance.now(), d = 1600;
+        (function tick(t){ var p = Math.min(1,(t-t0)/d), e = 1-Math.pow(1-p,3); el.textContent = fmt(Math.round(end*e)); if (p<1) requestAnimationFrame(tick); })(t0);
+      });
+    }).observe(stats);
+  }
+})();
+</script>
+</body>
+</html>
