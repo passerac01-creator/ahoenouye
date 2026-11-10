@@ -66,8 +66,10 @@ h2{font-size:clamp(34px,4.4vw,58px)}
 /* ===== HERO ===== */
 .hero{position:relative;background:var(--g9);color:#fff;overflow:hidden;min-height:720px;display:flex;flex-direction:column}
 .hero-bg{position:absolute;inset:0}
-.hero-bg img{width:100%;height:100%;object-fit:cover;object-position:70% 60%;transform:scale(1.06);transition:transform 2s cubic-bezier(.2,.8,.2,1)}
-.loaded .hero-bg img{transform:scale(1)}
+.hero-bg{transform:scale(1.06);transition:transform 2s cubic-bezier(.2,.8,.2,1)}
+.loaded .hero-bg{transform:none}
+.hero-bg img{width:100%;height:100%;object-fit:cover;object-position:70% 60%;will-change:transform}
+.hero-copy{will-change:transform,opacity}
 .hero-bg::after{content:"";position:absolute;inset:0;background:
   linear-gradient(90deg,rgba(9,40,22,.97) 0%,rgba(9,40,22,.9) 30%,rgba(9,40,22,.45) 55%,rgba(9,40,22,.05) 75%),
   linear-gradient(0deg,rgba(9,40,22,.75) 0%,transparent 30%),
@@ -96,7 +98,7 @@ header.top .wrap{display:flex;align-items:center;justify-content:space-between;h
 .hero h1 .red{color:#FF3B3F}
 .hero p.lead{font-size:18px;color:rgba(255,255,255,.86);max-width:46ch;margin-bottom:34px}
 .hero .cta{display:flex;gap:14px;flex-wrap:wrap}
-.note{position:absolute;z-index:3;color:#fff;font-size:30px;transform:rotate(-6deg);text-shadow:0 2px 14px rgba(0,0,0,.4)}
+.note{position:absolute;z-index:3;color:#fff;font-size:30px;transform:rotate(-6deg);text-shadow:0 2px 14px rgba(0,0,0,.4);will-change:transform}
 .note svg{display:block}
 .note-1{right:7%;top:120px}
 .note-1 svg{width:60px;margin:6px 0 0 120px;transform:rotate(20deg)}
@@ -172,7 +174,6 @@ header.top .wrap{display:flex;align-items:center;justify-content:space-between;h
 .story::before{content:"";position:absolute;width:640px;height:640px;border-radius:50%;background:var(--g7);left:-260px;bottom:-320px;opacity:.6}
 .story-grid{position:relative;display:grid;grid-template-columns:.95fr 1.05fr;gap:80px;align-items:center}
 .story-img{position:relative}
-.story-img img{border-radius:28px;aspect-ratio:4/4.6;object-fit:cover;width:100%;box-shadow:0 40px 70px -30px rgba(0,0,0,.6)}
 .story-img .stamp{position:absolute;right:-24px;bottom:34px;background:var(--yellow);color:var(--ink);border-radius:18px;padding:18px 22px;transform:rotate(4deg);font-size:26px;box-shadow:0 20px 40px -18px rgba(0,0,0,.5);max-width:240px}
 .story .hand{color:var(--yellow);font-size:30px;transform:rotate(-4deg);display:inline-block}
 .story .story-img .stamp{color:var(--ink);font-size:26px;transform:rotate(4deg);display:block}
@@ -217,7 +218,6 @@ header.top .wrap{display:flex;align-items:center;justify-content:space-between;h
 .diaspora{background:var(--cream);padding:110px 0}
 .dia-grid{display:grid;grid-template-columns:1.05fr .95fr;gap:70px;align-items:center}
 .dia-img{position:relative}
-.dia-img img{border-radius:28px;width:100%;aspect-ratio:16/11;object-fit:cover;box-shadow:0 30px 60px -30px rgba(0,0,0,.45)}
 .dia-img .flags{position:absolute;left:24px;bottom:-22px;background:#fff;border-radius:999px;padding:10px 18px;font-size:13px;font-weight:600;box-shadow:0 14px 30px -14px rgba(0,0,0,.35);display:flex;gap:8px;align-items:center}
 .dia-img .flags i{width:8px;height:8px;border-radius:50%;background:var(--g6);display:inline-block}
 .diaspora .hand{color:var(--red);font-size:28px;display:inline-block;transform:rotate(-4deg)}
@@ -247,7 +247,7 @@ header.top .wrap{display:flex;align-items:center;justify-content:space-between;h
 .offer-box h2{font-size:clamp(40px,5.2vw,74px);margin:8px 0 14px}
 .offer-box p{font-size:16.5px;max-width:42ch;margin-bottom:28px;color:#3A3216}
 .offer-box .img{position:relative;min-height:380px}
-.offer-box .img img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+.offer-box .img img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;transform:scale(1.15)}
 .burst{position:absolute;z-index:3;right:-64px;top:40px;width:128px;height:128px;border-radius:50%;background:var(--red);color:#fff;display:grid;place-items:center;text-align:center;font-weight:800;line-height:1.05;font-size:15px;transform:rotate(-12deg);box-shadow:0 14px 30px -12px rgba(0,0,0,.4)}
 .burst b{font-size:34px;display:block}
 
@@ -265,7 +265,7 @@ details p{color:var(--ink-2);padding-top:12px;font-size:15px}
 /* ===== FINAL ===== */
 .final{position:relative;background:var(--g8);color:#fff;text-align:center;overflow:hidden}
 .final-bg{position:absolute;inset:0}
-.final-bg img{width:100%;height:100%;object-fit:cover}
+.final-bg img{width:100%;height:100%;object-fit:cover;transform:scale(1.15)}
 .final-bg::after{content:"";position:absolute;inset:0;background:radial-gradient(ellipse 50% 60% at center,rgba(12,48,28,.55),transparent 80%)}
 .final .wrap{position:relative;z-index:2;padding-top:120px;padding-bottom:120px}
 .final h2{font-size:clamp(38px,5.4vw,70px);max-width:16ch;margin:0 auto 16px}
@@ -292,8 +292,24 @@ footer a:hover{color:#fff}
 .rv{opacity:0;transform:translateY(34px);transition:opacity .9s cubic-bezier(.2,.8,.2,1),transform .9s cubic-bezier(.2,.8,.2,1)}
 .rv.in{opacity:1;transform:none}
 .d1{transition-delay:.08s}.d2{transition-delay:.16s}.d3{transition-delay:.24s}.d4{transition-delay:.32s}
-@keyframes bob{50%{transform:translateY(-8px) rotate(-6deg)}}
-.note{animation:bob 5s ease-in-out infinite}
+/* scroll effects */
+[data-px],[data-rot]{will-change:transform}
+.pxwrap{position:relative;overflow:hidden;border-radius:28px}
+.pxwrap img{width:100%;height:100%;object-fit:cover;transform:scale(1.18)}
+.story-img .pxwrap{aspect-ratio:4/4.6;box-shadow:0 40px 70px -30px rgba(0,0,0,.6)}
+.dia-img .pxwrap{aspect-ratio:16/11;box-shadow:0 30px 60px -30px rgba(0,0,0,.45)}
+.rv.zoom{transform:scale(.92) translateY(20px)}
+.card.rv.in{transition:transform .25s ease-out,box-shadow .4s}
+.mini{position:fixed;top:0;left:0;right:0;z-index:70;background:rgba(11,46,27,.88);backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);color:#fff;transform:translateY(-110%);transition:transform .5s cubic-bezier(.2,.8,.2,1);border-bottom:1px solid rgba(255,255,255,.1);padding-top:env(safe-area-inset-top,0px)}
+.mini.on{transform:none}
+.mini .wrap{display:flex;align-items:center;justify-content:space-between;height:62px}
+.mini .logo b{font-size:28px}
+.mini ul{display:flex;gap:26px;list-style:none;font-size:14px;font-weight:500}
+.mini ul a{opacity:.85}
+.mini ul a:hover{opacity:1}
+.mini .btn{padding:10px 20px;font-size:14px}
+.mini .prog{position:absolute;left:0;bottom:-1px;height:3px;width:0;background:var(--yellow);transition:width .1s linear}
+@media (max-width:1100px){.mini ul{display:none}}
 @media (prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}.rv{opacity:1;transform:none}}
 
 /* ===== RESPONSIVE ===== */
@@ -358,6 +374,20 @@ footer a:hover{color:#fff}
 </head>
 <body>
 
+<div class="mini" id="mini" aria-hidden="true">
+  <div class="wrap">
+    <a href="#top" class="logo"><b>Ahoénouyé<i><svg viewBox="0 0 24 24" fill="#7BC043"><path d="M4 20C4 10 10 4 21 3c0 11-6 17-17 17z"/></svg></i></b></a>
+    <ul>
+      <li><a href="#farines">Nos farines</a></li>
+      <li><a href="#histoire">Notre histoire</a></li>
+      <li><a href="#questions">Vos questions</a></li>
+      <li><a href="#diaspora">Diaspora</a></li>
+    </ul>
+    <a class="btn btn-red wa" data-msg="Bonjour Ahoénouyé, je souhaite passer une commande." href="#">Commander</a>
+  </div>
+  <span class="prog" id="prog"></span>
+</div>
+
 <!-- ===================== HERO ===================== -->
 <section class="hero" id="top">
   <div class="hero-bg"><img src="assets/hero.jpg" alt="Les farines Ahoénouyé sur une table en bois, entourées d'ablo, de piments et de grains" fetchpriority="high"></div>
@@ -396,7 +426,7 @@ footer a:hover{color:#fff}
     </div>
   </div>
 
-  <div class="note note-1 hand" aria-hidden="true">Vraies céréales.<br>&nbsp;&nbsp;Vrai goût.
+  <div class="note note-1 hand" data-px="-0.35" data-rot="-8" data-base="-6" aria-hidden="true">Vraies céréales.<br>&nbsp;&nbsp;Vrai goût.
     <svg viewBox="0 0 60 40" fill="none" stroke="#fff" stroke-width="2.5" stroke-linecap="round"><path d="M4 4c10 20 26 28 48 26"/><path d="M42 22l10 8-12 4"/></svg>
   </div>
 
@@ -424,26 +454,26 @@ footer a:hover{color:#fff}
       <p class="sub rv d2">Parce que vous méritez de bien manger, sans y passer trois jours.</p>
       <div class="feats">
         <div class="feat rv">
-          <div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M5 19c0-9 6-14 15-15 0 9-5 15-15 15z"/><path d="M5 19 13 11"/></svg></div>
+          <div class="ic" data-rot="-14"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M5 19c0-9 6-14 15-15 0 9-5 15-15 15z"/><path d="M5 19 13 11"/></svg></div>
           <h3>Ingrédients naturels</h3><p>Maïs, mil, sorgho, haricots, igname, datte, souchet. Rien que vous ne sauriez prononcer.</p>
         </div>
         <div class="feat rv d1">
-          <div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="13" r="8"/><path d="M12 9v4l3 2M9 2h6"/></svg></div>
+          <div class="ic" data-rot="14"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="13" r="8"/><path d="M12 9v4l3 2M9 2h6"/></svg></div>
           <h3>Des jours gagnés</h3><p>Trempage, fermentation, séchage, mouture : c'est fait. Il ne reste que l'eau et la cuisson.</p>
         </div>
         <div class="feat rv d2">
-          <div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 20s-7-4.5-7-10a4 4 0 0 1 7-2.6A4 4 0 0 1 19 10c0 5.5-7 10-7 10z"/></svg></div>
+          <div class="ic" data-rot="-14"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 20s-7-4.5-7-10a4 4 0 0 1 7-2.6A4 4 0 0 1 19 10c0 5.5-7 10-7 10z"/></svg></div>
           <h3>Nourrissant</h3><p>Des céréales et légumineuses complètes, pour les grands comme pour les tout-petits.</p>
         </div>
         <div class="feat rv d3">
-          <div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M8 14s1.5 2 4 2 4-2 4-2"/><path d="M9 9.5h.01M15 9.5h.01"/></svg></div>
+          <div class="ic" data-rot="14"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M8 14s1.5 2 4 2 4-2 4-2"/><path d="M9 9.5h.01M15 9.5h.01"/></svg></div>
           <h3>Le vrai goût</h3><p>Celui de la cour de la maison, des dimanches à Lomé. Pas une imitation industrielle.</p>
         </div>
       </div>
     </div>
-    <div class="why-media rv d2">
-      <span class="t2 hand">Moelleux,<br>comme chez maman !</span>
-      <img src="assets/bowl.jpg" alt="Bol d'ablo moelleux préparé avec la farine Ahoénouyé" loading="lazy">
+    <div class="why-media rv zoom d2">
+      <span class="t2 hand" data-px="0.25" data-rot="6" data-base="-8">Moelleux,<br>comme chez maman !</span>
+      <img data-px="0.14" src="assets/bowl.jpg" alt="Bol d'ablo moelleux préparé avec la farine Ahoénouyé" loading="lazy">
     </div>
   </div>
 </section>
@@ -560,9 +590,9 @@ footer a:hover{color:#fff}
 <!-- ===================== STORY ===================== -->
 <section class="story" id="histoire">
   <div class="wrap story-grid">
-    <div class="story-img rv">
-      <img src="assets/mains.jpg" alt="Mains d'une cuisinière togolaise travaillant une pâte de farine" loading="lazy">
-      <div class="stamp hand">Ce que nos mères faisaient en 3 jours, on le met dans un pot.</div>
+    <div class="story-img rv zoom">
+      <div class="pxwrap"><img data-px="0.12" data-scale="0.18" src="assets/mains.jpg" alt="Mains d'une cuisinière togolaise travaillant une pâte de farine" loading="lazy"></div>
+      <div class="stamp hand" data-px="0.08" data-rot="12" data-base="4">Ce que nos mères faisaient en 3 jours, on le met dans un pot.</div>
     </div>
     <div>
       <span class="hand rv">Notre histoire</span>
@@ -623,15 +653,15 @@ footer a:hover{color:#fff}
       <div class="use rv d3"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M3 11 12 4l9 7"/><path d="M5 10v10h14V10"/><path d="M10 20v-5h4v5"/></svg>À la maison</div>
       <div class="use rv d4"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M17.8 19.2 16 11l3.5-3.5C21 6 21.5 4 21 3c-1-.5-3 0-4.5 1.5L13 8 4.8 6.2c-.5-.1-.9.1-1.1.5l-.3.5c-.2.5-.1 1 .3 1.3L9 12l-2 3H4l-1 1 3 2 2 3 1-1v-3l3-2 3.5 5.3c.3.4.8.5 1.3.3l.5-.2c.4-.3.6-.7.5-1.2z"/></svg>La diaspora</div>
     </div>
-    <div class="ticket hand">Le même goût.<br>Partout.</div>
+    <div class="ticket hand" data-rot="14" data-base="5">Le même goût.<br>Partout.</div>
   </div>
 </section>
 
 <!-- ===================== DIASPORA ===================== -->
 <section class="diaspora" id="diaspora">
   <div class="wrap dia-grid">
-    <div class="dia-img rv">
-      <img src="assets/diaspora.jpg" alt="Une femme ouvre un colis de farines Ahoénouyé dans sa cuisine" loading="lazy">
+    <div class="dia-img rv zoom">
+      <div class="pxwrap"><img data-px="0.12" data-scale="0.18" src="assets/diaspora.jpg" alt="Une femme ouvre un colis de farines Ahoénouyé dans sa cuisine" loading="lazy"></div>
       <div class="flags"><i></i>Togo · Bénin · Ghana · Gabon · Côte d'Ivoire · Europe · USA</div>
     </div>
     <div>
@@ -658,13 +688,13 @@ footer a:hover{color:#fff}
       </div>
       <a class="btn btn-dark rv d2" href="https://www.tiktok.com/@ahoenou4" target="_blank" rel="noopener">Suivre @ahoenou4</a>
     </div>
-    <div class="tt-grid">
-      <a class="tt rv" href="https://www.tiktok.com/@ahoenou4/video/7617986306685013269" target="_blank" rel="noopener"><img src="assets/tt-1.jpg" alt="Vidéo TikTok : farine de foufou" loading="lazy"><span class="pill r top">Foufou</span><span class="v"><svg viewBox="0 0 24 24"><path d="M6 4l14 8-14 8z"/></svg>327,9K</span></a>
-      <a class="tt rv d1" href="https://www.tiktok.com/@ahoenou4/video/7653119239993265426" target="_blank" rel="noopener"><img src="assets/tt-2.jpg" alt="Vidéo TikTok Ahoénouyé" loading="lazy"><span class="v"><svg viewBox="0 0 24 24"><path d="M6 4l14 8-14 8z"/></svg>169,2K</span></a>
-      <a class="tt rv d2" href="https://www.tiktok.com/@ahoenou4/video/7593795726837173515" target="_blank" rel="noopener"><img src="assets/tt-3.jpg" alt="Vidéo TikTok : gaoufoto" loading="lazy"><span class="pill top">Gaoufoto</span><span class="v"><svg viewBox="0 0 24 24"><path d="M6 4l14 8-14 8z"/></svg>165,6K</span></a>
-      <a class="tt rv d3" href="https://www.tiktok.com/@ahoenou4/video/7648191631224556807" target="_blank" rel="noopener"><img src="assets/tt-4.jpg" alt="Vidéo TikTok : farine bien-être" loading="lazy"><span class="pill y top">Bien-être</span><span class="v"><svg viewBox="0 0 24 24"><path d="M6 4l14 8-14 8z"/></svg>90,3K</span></a>
-      <a class="tt rv d1" href="https://www.tiktok.com/@ahoenou4/video/7595367510350777612" target="_blank" rel="noopener"><img src="assets/tt-5.jpg" alt="Vidéo TikTok : ema déshydraté" loading="lazy"><span class="pill top">Ema</span><span class="v"><svg viewBox="0 0 24 24"><path d="M6 4l14 8-14 8z"/></svg>76,6K</span></a>
-      <a class="tt rv d2" href="https://www.tiktok.com/@ahoenou4/video/7681279756523916551" target="_blank" rel="noopener"><img src="assets/tt-6.jpg" alt="Vidéo TikTok : farine Adowè" loading="lazy"><span class="pill top">Adowè</span><span class="v"><svg viewBox="0 0 24 24"><path d="M6 4l14 8-14 8z"/></svg>69,5K</span></a>
+    <div class="tt-grid rv">
+      <a class="tt" data-px="0.14" href="https://www.tiktok.com/@ahoenou4/video/7617986306685013269" target="_blank" rel="noopener"><img src="assets/tt-1.jpg" alt="Vidéo TikTok : farine de foufou" loading="lazy"><span class="pill r top">Foufou</span><span class="v"><svg viewBox="0 0 24 24"><path d="M6 4l14 8-14 8z"/></svg>327,9K</span></a>
+      <a class="tt" data-px="-0.14" href="https://www.tiktok.com/@ahoenou4/video/7653119239993265426" target="_blank" rel="noopener"><img src="assets/tt-2.jpg" alt="Vidéo TikTok Ahoénouyé" loading="lazy"><span class="v"><svg viewBox="0 0 24 24"><path d="M6 4l14 8-14 8z"/></svg>169,2K</span></a>
+      <a class="tt" data-px="0.14" href="https://www.tiktok.com/@ahoenou4/video/7593795726837173515" target="_blank" rel="noopener"><img src="assets/tt-3.jpg" alt="Vidéo TikTok : gaoufoto" loading="lazy"><span class="pill top">Gaoufoto</span><span class="v"><svg viewBox="0 0 24 24"><path d="M6 4l14 8-14 8z"/></svg>165,6K</span></a>
+      <a class="tt" data-px="-0.14" href="https://www.tiktok.com/@ahoenou4/video/7648191631224556807" target="_blank" rel="noopener"><img src="assets/tt-4.jpg" alt="Vidéo TikTok : farine bien-être" loading="lazy"><span class="pill y top">Bien-être</span><span class="v"><svg viewBox="0 0 24 24"><path d="M6 4l14 8-14 8z"/></svg>90,3K</span></a>
+      <a class="tt" data-px="0.14" href="https://www.tiktok.com/@ahoenou4/video/7595367510350777612" target="_blank" rel="noopener"><img src="assets/tt-5.jpg" alt="Vidéo TikTok : ema déshydraté" loading="lazy"><span class="pill top">Ema</span><span class="v"><svg viewBox="0 0 24 24"><path d="M6 4l14 8-14 8z"/></svg>76,6K</span></a>
+      <a class="tt" data-px="-0.14" href="https://www.tiktok.com/@ahoenou4/video/7681279756523916551" target="_blank" rel="noopener"><img src="assets/tt-6.jpg" alt="Vidéo TikTok : farine Adowè" loading="lazy"><span class="pill top">Adowè</span><span class="v"><svg viewBox="0 0 24 24"><path d="M6 4l14 8-14 8z"/></svg>69,5K</span></a>
     </div>
   </div>
 </section>
@@ -672,15 +702,15 @@ footer a:hover{color:#fff}
 <!-- ===================== OFFER ===================== -->
 <section class="offer" id="offre">
   <div class="wrap">
-    <div class="offer-box rv">
+    <div class="offer-box rv zoom">
       <div class="txt">
-        <div class="burst"><div><b>+500g</b>offerts</div></div>
+        <div class="burst" data-rot="40" data-base="-12"><div><b>+500g</b>offerts</div></div>
         <span class="hand">Offre du moment</span>
         <h2>2,5 kg au prix <span class="red">de 2 kg.</span></h2>
         <p>Faites le plein avant les fêtes, les visites de famille et les dimanches à rallonge. Offre limitée sur une sélection de farines — demandez lesquelles sur WhatsApp.</p>
         <a class="btn btn-red wa" data-msg="Bonjour Ahoénouyé, je souhaite profiter de l'offre 2,5 kg au prix de 2 kg." href="#">J'en profite <svg class="arr" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
       </div>
-      <div class="img"><img src="assets/gamme.jpg" alt="La gamme des farines Ahoénouyé" loading="lazy"></div>
+      <div class="img"><img data-px="0.1" data-scale="0.15" src="assets/gamme.jpg" alt="La gamme des farines Ahoénouyé" loading="lazy"></div>
     </div>
   </div>
 </section>
@@ -706,7 +736,7 @@ footer a:hover{color:#fff}
 
 <!-- ===================== FINAL ===================== -->
 <section class="final">
-  <div class="final-bg"><img src="assets/cta-bg.jpg" alt="" loading="lazy"></div>
+  <div class="final-bg"><img data-px="0.18" data-scale="0.15" src="assets/cta-bg.jpg" alt="" loading="lazy"></div>
   <div class="wrap">
     <h2 class="rv">Prêt à manger <span class="red">comme à la maison ?</span></h2>
     <p class="rv d1">Choisissez votre farine, envoyez-nous un message. On s'occupe du reste.</p>
@@ -769,6 +799,54 @@ footer a:hover{color:#fff}
         (function tick(t){ var p = Math.min(1,(t-t0)/d), e = 1-Math.pow(1-p,3); el.textContent = fmt(Math.round(end*e)); if (p<1) requestAnimationFrame(tick); })(t0);
       });
     }).observe(stats);
+  }
+
+  /* ---- Scroll effects: parallax, rotation, sticky bar ---- */
+  var reduce = matchMedia("(prefers-reduced-motion: reduce)").matches;
+  var mini = document.getElementById("mini"), prog = document.getElementById("prog");
+  var hero = document.querySelector(".hero"), heroBg = document.querySelector(".hero-bg img"), heroCopy = document.querySelector(".hero-copy");
+  var items = [].slice.call(document.querySelectorAll("[data-px],[data-rot]")).map(function(el){
+    return { el: el, px: +el.getAttribute("data-px") || 0, rot: +el.getAttribute("data-rot") || 0,
+             base: +el.getAttribute("data-base") || 0, sc: +el.getAttribute("data-scale") || 0, on: true };
+  });
+  if (io) {
+    var vis = new IntersectionObserver(function(es){ es.forEach(function(e){ var it = items.find(function(i){ return i.el === e.target; }); if (it) it.on = e.isIntersecting; }); }, {rootMargin: "25% 0px"});
+    items.forEach(function(it){ vis.observe(it.el); });
+  }
+  var ticking = false;
+  function frame(){
+    ticking = false;
+    var y = window.scrollY, vh = window.innerHeight, dh = document.documentElement.scrollHeight - vh;
+    if (mini) mini.classList.toggle("on", y > (hero ? hero.offsetHeight - 120 : 500));
+    if (prog) prog.style.width = (dh > 0 ? Math.min(100, y / dh * 100) : 0) + "%";
+    if (reduce) return;
+    if (heroBg && y < vh * 1.3) heroBg.style.transform = "translate3d(0," + (y * .35).toFixed(1) + "px,0) scale(" + (1 + y / vh * .1).toFixed(3) + ")";
+    if (heroCopy && y < vh) { heroCopy.style.transform = "translate3d(0," + (y * .18).toFixed(1) + "px,0)"; heroCopy.style.opacity = Math.max(0, 1 - y / (vh * .75)).toFixed(3); }
+    for (var i = 0; i < items.length; i++) {
+      var it = items[i]; if (!it.on) continue;
+      var r = it.el.getBoundingClientRect();
+      var t = (r.top + r.height / 2 - vh / 2) / vh;              /* -1 (below) … 0 (centre) … 1 (above) */
+      t = Math.max(-1.2, Math.min(1.2, t));
+      var s = "translate3d(0," + (-t * it.px * 180).toFixed(1) + "px,0)";
+      if (it.rot || it.base) s += " rotate(" + (it.base + t * it.rot).toFixed(2) + "deg)";
+      if (it.sc) s += " scale(" + (1 + it.sc) + ")";
+      it.el.style.transform = s;
+    }
+  }
+  function onScroll(){ if (!ticking) { ticking = true; requestAnimationFrame(frame); } }
+  window.addEventListener("scroll", onScroll, {passive: true});
+  window.addEventListener("resize", onScroll);
+  frame();
+
+  /* ---- 3D tilt on product cards (mouse only) ---- */
+  if (!reduce && matchMedia("(hover: hover) and (pointer: fine)").matches) {
+    document.querySelectorAll(".card").forEach(function(c){
+      c.addEventListener("mousemove", function(e){
+        var r = c.getBoundingClientRect(), x = (e.clientX - r.left) / r.width - .5, yy = (e.clientY - r.top) / r.height - .5;
+        c.style.transform = "translateY(-8px) perspective(900px) rotateX(" + (-yy * 8).toFixed(2) + "deg) rotateY(" + (x * 8).toFixed(2) + "deg)";
+      });
+      c.addEventListener("mouseleave", function(){ c.style.transform = ""; });
+    });
   }
 })();
 </script>
