@@ -169,6 +169,16 @@ header.top .wrap{display:flex;align-items:center;justify-content:space-between;h
 .card.kit .btn{align-self:flex-start}
 .card.kit:hover{transform:translateY(-8px)}
 
+.price{margin-top:14px;display:flex;align-items:baseline;gap:6px;color:var(--g8);font-weight:800;font-size:24px;letter-spacing:-.02em;line-height:1}
+.price small{font-size:13px;font-weight:600;color:var(--ink-2);letter-spacing:0}
+.price .from{font-size:12.5px}
+.pnote{font-size:12px;color:var(--ink-2);margin-top:6px;line-height:1.4}
+.vars{list-style:none;margin-top:12px;display:grid;gap:6px;font-size:13px}
+.vars li{display:flex;justify-content:space-between;gap:10px;padding:6px 10px;border-radius:10px;background:var(--mint)}
+.vars b{color:var(--g8);white-space:nowrap}
+.catalog-link{display:flex;justify-content:center;margin-top:40px}
+.card.feature .price{font-size:30px}
+
 /* ===== STORY ===== */
 .story{background:var(--g8);color:#fff;padding:120px 0;position:relative;overflow:hidden}
 .story::before{content:"";position:absolute;width:640px;height:640px;border-radius:50%;background:var(--g7);left:-260px;bottom:-320px;opacity:.6}
@@ -500,7 +510,8 @@ footer a:hover{color:#fff}
           <h3>Farine d'Ablo accomplie</h3>
           <div class="for">Pour : ablo moelleux du dimanche</div>
           <p>Le pain vapeur blanc, léger, légèrement sucré — servi avec poisson frit et piment. Notre farine est déjà travaillée : pas de fermentation à gérer, vos ablo gonflent et restent moelleux. C'est la farine qui a fait connaître Ahoénouyé.</p>
-          <a class="order wa" data-msg="Bonjour Ahoénouyé, je souhaite commander la Farine d'Ablo." href="#">Commander l'Ablo <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+          <div class="price"><b>2 500</b> <small>F CFA</small></div>
+          <a class="order wa" data-msg="Bonjour Ahoénouyé, je souhaite commander la Farine d'Ablo (2 500 F CFA)." href="#">Commander l'Ablo <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
         </div>
       </article>
       <article class="card rv d1" data-cat="plat">
@@ -509,7 +520,8 @@ footer a:hover{color:#fff}
           <h3>Farine de Foufou</h3>
           <div class="for">Pour : foufou d'igname</div>
           <p>Un foufou lisse et élastique sans pilon ni mortier. La vidéo qui a fait le tour de TikTok.</p>
-          <a class="order wa" data-msg="Bonjour Ahoénouyé, je souhaite commander la Farine de Foufou." href="#">Commander <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+          <div class="price"><b>3 000</b> <small>F CFA</small></div>
+          <a class="order wa" data-msg="Bonjour Ahoénouyé, je souhaite commander la Farine de Foufou (3 000 F CFA)." href="#">Commander <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
         </div>
       </article>
       <article class="card rv d2" data-cat="bouillie">
@@ -518,7 +530,8 @@ footer a:hover{color:#fff}
           <h3>Djèdjèviiii</h3>
           <div class="for">« Ma première farine »</div>
           <p>Farine infantile naturellement sucrée à la datte, au souchet et à la patate douce.</p>
-          <a class="order wa" data-msg="Bonjour Ahoénouyé, je souhaite commander la farine infantile Djèdjèviiii." href="#">Commander <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+          <div class="price"><b>2 500</b> <small>F CFA</small></div><div class="pnote">Version Koko ou farine : même prix</div>
+          <a class="order wa" data-msg="Bonjour Ahoénouyé, je souhaite commander la farine infantile Djèdjèviiii (2 500 F CFA)." href="#">Commander <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
         </div>
       </article>
       <article class="card rv" data-cat="bouillie">
@@ -527,7 +540,8 @@ footer a:hover{color:#fff}
           <h3>Farine pour Koko</h3>
           <div class="for">Pour : koko, haoussa koko</div>
           <p>Le koko épicé du matin, celui du coin de la rue avec ses beignets. Lisse et parfumé.</p>
-          <a class="order wa" data-msg="Bonjour Ahoénouyé, je souhaite commander la Farine pour Koko." href="#">Commander <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+          <div class="price"><b>2 000</b> <small>F CFA</small></div><div class="pnote">Koko rouge ou Koko blanc : même prix</div>
+          <a class="order wa" data-msg="Bonjour Ahoénouyé, je souhaite commander la Farine pour Koko (2 000 F CFA)." href="#">Commander <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
         </div>
       </article>
       <article class="card rv d1" data-cat="beignet plat">
@@ -536,7 +550,8 @@ footer a:hover{color:#fff}
           <h3>Adowè & Haricots</h3>
           <div class="for">Pour : gaou, gaoufoto, adowè, timbani</div>
           <p>Haricots décortiqués et moulus : fini l'épluchage. Des beignets dorés et aériens.</p>
-          <a class="order wa" data-msg="Bonjour Ahoénouyé, je souhaite commander la Farine Adowè / farine d'haricots." href="#">Commander <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+          <div class="price"><b>2 000</b> <small>F CFA</small></div><div class="pnote">Adowè ou farine d'haricots : même prix</div>
+          <a class="order wa" data-msg="Bonjour Ahoénouyé, je souhaite commander la Farine Adowè / farine d'haricots (2 000 F CFA)." href="#">Commander <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
         </div>
       </article>
       <article class="card rv d2" data-cat="plat">
@@ -545,7 +560,8 @@ footer a:hover{color:#fff}
           <h3>Ema déshydraté</h3>
           <div class="for">Pour : kom, emakoumé</div>
           <p>La pâte de maïs fermentée, déshydratée pour voyager. Le vrai kom, même à 6 000 km.</p>
-          <a class="order wa" data-msg="Bonjour Ahoénouyé, je souhaite commander l'Ema déshydraté." href="#">Commander <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+          <div class="price"><b>2 000</b> <small>F CFA</small></div><div class="pnote">Ema de maïs ou de sorgho : même prix</div>
+          <a class="order wa" data-msg="Bonjour Ahoénouyé, je souhaite commander l'Ema déshydraté (2 000 F CFA)." href="#">Commander <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
         </div>
       </article>
       <article class="card rv d3" data-cat="bouillie">
@@ -554,7 +570,8 @@ footer a:hover{color:#fff}
           <h3>Maïzena (Akpan)</h3>
           <div class="for">Pour : akpan, kafa</div>
           <p>Votre akpan maison, onctueux et rafraîchissant, avec du lait et des glaçons.</p>
-          <a class="order wa" data-msg="Bonjour Ahoénouyé, je souhaite commander la Farine Maïzena pour Akpan." href="#">Commander <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+          <div class="price"><b>2 500</b> <small>F CFA</small></div>
+          <a class="order wa" data-msg="Bonjour Ahoénouyé, je souhaite commander la Farine Maïzena pour Akpan (2 500 F CFA)." href="#">Commander <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
         </div>
       </article>
       <article class="card rv" data-cat="plat">
@@ -563,16 +580,19 @@ footer a:hover{color:#fff}
           <h3>Djinkoumé coco</h3>
           <div class="for">Pour : djinkoumé à la noix de coco</div>
           <p>La pâte rouge des fêtes, parfumée à la coco. Possible même un mardi soir.</p>
-          <a class="order wa" data-msg="Bonjour Ahoénouyé, je souhaite commander la Farine de Djinkoumé à la noix de coco." href="#">Commander <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+          <div class="price"><b>2 500</b> <small>F CFA</small></div>
+          <a class="order wa" data-msg="Bonjour Ahoénouyé, je souhaite commander la Farine de Djinkoumé à la noix de coco (2 500 F CFA)." href="#">Commander <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
         </div>
       </article>
       <article class="card rv d1" data-cat="bouillie">
         <div class="img"><img src="assets/aklui.jpg" alt="Aklui zogbon et bouillie" loading="lazy"><span class="pill">VIP</span></div>
         <div class="body">
-          <h3>Aklui Zogbon</h3>
-          <div class="for">Pour : bouillie aklui</div>
+          <h3>Aklui</h3>
+          <div class="for">Pour : bouillie d'aklui, 4 variétés</div>
           <p>Les petites billes roulées à la main. Avec des arachides grillées, un souvenir d'enfance.</p>
-          <a class="order wa" data-msg="Bonjour Ahoénouyé, je souhaite commander l'Aklui Zogbon." href="#">Commander <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+          <div class="price"><small class="from">dès</small> <b>1 200</b> <small>F CFA</small></div>
+          <ul class="vars"><li><span>Aklui la joie</span><b>2 500 F CFA</b></li><li><span>Aklui du sorgho</span><b>1 200 F CFA</b></li><li><span>Aklui du mil</span><b>1 200 F CFA</b></li><li><span>Aklui maïs</span><b>1 200 F CFA</b></li></ul>
+          <a class="order wa" data-msg="Bonjour Ahoénouyé, je souhaite commander de l'Aklui. Variété souhaitée : (la joie, sorgho, mil ou maïs)." href="#">Commander <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
         </div>
       </article>
       <article class="card kit rv d2" data-cat="plat bouillie beignet">
@@ -583,6 +603,9 @@ footer a:hover{color:#fff}
           <a class="btn btn-red wa" data-msg="Bonjour Ahoénouyé, je souhaite composer un Kit Découverte." href="#">Composer mon kit <svg class="arr" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
         </div>
       </article>
+    </div>
+    <div class="catalog-link rv">
+      <a class="btn btn-dark" href="https://wa.me/c/22879428555" target="_blank" rel="noopener">Voir le catalogue complet sur WhatsApp <svg class="arr" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
     </div>
   </div>
 </section>
@@ -621,7 +644,7 @@ footer a:hover{color:#fff}
       <div class="q rv">
         <div class="who"><span class="av" style="background:#1F6B3D">?</span><div><b>« C'est combien et vous êtes où ? »</b><small>Question n°1 sur TikTok</small></div></div>
         <blockquote>« Donnez-nous les prix au moins ! »</blockquote>
-        <div class="ans"><strong>Réponse :</strong> on est à Lomé. Un message WhatsApp et on vous envoie la liste des prix du jour, les formats et le point de retrait ou de livraison.</div>
+        <div class="ans"><strong>Réponse :</strong> les prix sont maintenant affichés sur chaque farine, en F CFA. On est à Lomé : pour le point de retrait ou la livraison, un message WhatsApp suffit.</div>
         <span class="pill">Toutes les farines</span>
       </div>
       <div class="q rv d1">
@@ -725,6 +748,7 @@ footer a:hover{color:#fff}
     </div>
     <div class="rv d1">
       <details open><summary>Comment je commande ?</summary><p>Cliquez sur n'importe quel bouton « Commander » : WhatsApp s'ouvre avec un message prêt à envoyer. On vous confirme prix, disponibilité et livraison.</p></details>
+      <details><summary>Combien coûtent les farines ?</summary><p>Le prix est indiqué sur chaque farine, en francs CFA (F CFA). Le catalogue WhatsApp d'Ahoénouyé reste la référence si un prix évolue.</p></details>
       <details><summary>Où êtes-vous situés ?</summary><p>À Lomé, au Togo. Écrivez-nous sur WhatsApp pour l'adresse exacte du point de retrait ou pour une livraison.</p></details>
       <details><summary>Livrez-vous hors du Togo ?</summary><p>Nos farines sont commandées au Togo, au Bénin, au Ghana et dans toute la diaspora. Donnez-nous votre pays et votre ville : on vous indique la meilleure solution d'envoi.</p></details>
       <details><summary>Est-ce difficile à préparer ?</summary><p>Non, c'est tout l'intérêt : le long travail est déjà fait. Chaque farine s'accompagne de conseils, et nos vidéos TikTok montrent chaque recette pas à pas.</p></details>
