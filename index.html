@@ -160,9 +160,9 @@ header.top .wrap{display:flex;align-items:center;justify-content:space-between;h
 .card.feature .body{flex:1;padding:30px}
 .card.feature h3{font-size:28px}
 .card.feature p{font-size:15px}
-.card.kit{grid-column:span 4;background:var(--g8) url("assets/gamme.jpg") right center/cover no-repeat;color:#fff;position:relative}
+.card.kit{grid-column:span 2;background:var(--g8) url("assets/gamme.jpg") right center/cover no-repeat;color:#fff;position:relative}
 .card.kit::before{content:"";position:absolute;inset:0;background:linear-gradient(90deg,var(--g8) 38%,rgba(14,59,34,.55) 70%,rgba(14,59,34,.1))}
-.card.kit .body{position:relative;justify-content:center;max-width:52%;padding:44px}
+.card.kit .body{position:relative;justify-content:center;max-width:62%;padding:34px}
 .card.kit .hand{color:var(--yellow);font-size:28px}
 .card.kit h3{font-size:30px;margin:4px 0 12px}
 .card.kit p{color:rgba(255,255,255,.82);flex:none;margin-bottom:22px;font-size:14.5px}
@@ -516,7 +516,7 @@ footer a:hover{color:#fff}
           <a class="order wa" data-msg="Bonjour Ahoénouyé, je souhaite commander la Farine d'Ablo (2 500 F CFA)." href="#">Commander l'Ablo <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
         </div>
       </article>
-      <article class="card rv d1" data-cat="plat">
+      <article class="card rv" data-cat="plat">
         <div class="img"><img src="assets/foufou.jpg" alt="Foufou d'igname préparé avec la farine Ahoénouyé" loading="lazy"><span class="pill r">327K vues</span></div>
         <div class="body">
           <h3>Farine de Foufou</h3>
@@ -526,49 +526,79 @@ footer a:hover{color:#fff}
           <a class="order wa" data-msg="Bonjour Ahoénouyé, je souhaite commander la Farine de Foufou (3 000 F CFA)." href="#">Commander <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
         </div>
       </article>
-      <article class="card rv d2" data-cat="bouillie">
-        <div class="img"><img src="assets/djedjevi.jpg" alt="Farine infantile Djèdjèviiii et bouillie" loading="lazy"><span class="pill y">Bébé</span></div>
+      <article class="card rv d1" data-cat="bouillie">
+        <div class="img"><img src="assets/koko-djedjevi.jpg" alt="Farine infantile Koko Djèdjèviiii et bouillie pour bébé" loading="lazy"><span class="pill y">Bébé</span></div>
         <div class="body">
-          <h3>Djèdjèviiii</h3>
+          <h3>Koko Djèdjèviiii</h3>
           <div class="for">« Ma première farine »</div>
           <p>Farine infantile naturellement sucrée à la datte, au souchet et à la patate douce. Sur le pot : « pour les bébés de moins de 01 an ».</p>
           <div class="price"><b>2 500</b> <small>F CFA</small></div>
-          <a class="order wa" data-msg="Bonjour Ahoénouyé, je souhaite commander la farine infantile Djèdjèviiii (2 500 F CFA)." href="#">Commander <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+          <a class="order wa" data-msg="Bonjour Ahoénouyé, je souhaite commander la farine infantile Koko Djèdjèviiii (2 500 F CFA)." href="#">Commander <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
         </div>
       </article>
-      <article class="card rv" data-cat="bouillie">
-        <div class="img"><img src="assets/koko.jpg" alt="Farine pour Koko et bouillie de mil" loading="lazy"><span class="pill">Petit-déj</span></div>
+      <article class="card rv d2" data-cat="bouillie">
+        <div class="img"><img src="assets/koko.jpg" alt="Farine pour Koko rouge et bouillie de sorgho" loading="lazy"><span class="pill">Petit-déj</span></div>
         <div class="body">
-          <h3>Farine pour Koko</h3>
-          <div class="for">Pour : koko, haoussa koko</div>
-          <p>Le koko épicé du matin, celui du coin de la rue avec ses beignets. Lisse et parfumé.</p>
-          <div class="price"><b>2 000</b> <small>F CFA</small></div><div class="pnote">Koko rouge ou Koko blanc : même prix</div>
-          <a class="order wa" data-msg="Bonjour Ahoénouyé, je souhaite commander la Farine pour Koko (2 000 F CFA)." href="#">Commander <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
-        </div>
-      </article>
-      <article class="card rv d1" data-cat="beignet plat">
-        <div class="img"><img src="assets/adowe.jpg" alt="Farine Adowè et beignets de haricot" loading="lazy"><span class="pill">Haricot</span></div>
-        <div class="body">
-          <h3>Adowè & Haricots</h3>
-          <div class="for">Pour : gaou, gaoufoto, adowè, timbani</div>
-          <p>Haricots décortiqués et moulus : fini l'épluchage. Des beignets dorés et aériens.</p>
-          <div class="price"><small class="from">dès</small> <b>2 000</b> <small>F CFA</small></div>
-          <ul class="vars"><li><span>Farine d'adowè</span><b>2 000 F CFA</b></li><li><span>Farine d'haricots 1 kg</span><b>2 000 F CFA</b></li><li><span>Farine d'haricots 1,5 kg</span><b>3 000 F CFA</b></li></ul>
-          <a class="order wa" data-msg="Bonjour Ahoénouyé, je souhaite commander la farine d'adowè (2 000 F CFA) ou la farine d'haricots (1 kg 2 000 F CFA, 1,5 kg 3 000 F CFA). Produit et format souhaités : " href="#">Commander <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
-        </div>
-      </article>
-      <article class="card rv d2" data-cat="plat">
-        <div class="img"><img src="assets/ema.jpg" alt="Ema déshydraté pour kom" loading="lazy"><span class="pill r">Diaspora</span></div>
-        <div class="body">
-          <h3>Ema déshydraté</h3>
-          <div class="for">Pour : kom, emakoumé</div>
-          <p>La pâte de maïs fermentée, déshydratée pour voyager. Le vrai kom, même à 6 000 km.</p>
-          <div class="price"><small class="from">dès</small> <b>2 000</b> <small>F CFA</small></div>
-          <ul class="vars"><li><span>Ema du maïs</span><b>2 000 F CFA</b></li><li><span>Ema du sorgho, petit pot</span><b>2 000 F CFA</b></li><li><span>Ema du sorgho, grand pot</span><b>4 000 F CFA</b></li></ul>
-          <a class="order wa" data-msg="Bonjour Ahoénouyé, je souhaite commander l'Ema déshydraté (maïs 2 000 F CFA ; sorgho petit pot 2 000 F CFA, grand pot 4 000 F CFA). Produit et format souhaités : " href="#">Commander <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+          <h3>Koko rouge</h3>
+          <div class="for">Pour : koko au sorgho</div>
+          <p>Le koko épicé du matin, celui du coin de la rue avec ses beignets. Lisse et parfumé, fait à base de sorgho.</p>
+          <div class="price"><b>2 000</b> <small>F CFA</small></div>
+          <a class="order wa" data-msg="Bonjour Ahoénouyé, je souhaite commander le Koko rouge (2 000 F CFA)." href="#">Commander <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
         </div>
       </article>
       <article class="card rv d3" data-cat="bouillie">
+        <div class="img"><img src="assets/koko-blanc.jpg" alt="Farine pour Koko blanc et bouillie de petit mil" loading="lazy"><span class="pill">Petit mil</span></div>
+        <div class="body">
+          <h3>Koko blanc</h3>
+          <div class="for">Pour : koko blanc</div>
+          <p>Le koko blanc, à base de petit mil et d'épices : une bouillie chaude et parfumée pour bien démarrer la journée.</p>
+          <div class="price"><b>2 000</b> <small>F CFA</small></div>
+          <a class="order wa" data-msg="Bonjour Ahoénouyé, je souhaite commander le Koko blanc (2 000 F CFA)." href="#">Commander <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+        </div>
+      </article>
+      <article class="card rv" data-cat="plat">
+        <div class="img"><img src="assets/adowe.jpg" alt="Farine Adowè et beignets de haricot" loading="lazy"><span class="pill">Haricot</span></div>
+        <div class="body">
+          <h3>Farine d'Adowè</h3>
+          <div class="for">Pour : adowè</div>
+          <p>L'adowè moelleux, sans passer des heures à éplucher et à moudre les haricots. Fait à base d'haricots.</p>
+          <div class="price"><b>2 000</b> <small>F CFA</small></div>
+          <a class="order wa" data-msg="Bonjour Ahoénouyé, je souhaite commander la farine d'adowè (2 000 F CFA)." href="#">Commander <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+        </div>
+      </article>
+      <article class="card rv d1" data-cat="beignet plat">
+        <div class="img"><img src="assets/haricots.jpg" alt="Farine d'haricots, pots de 1 kg et de 1,5 kg, avec beignets de haricots" loading="lazy"><span class="pill">2 formats</span></div>
+        <div class="body">
+          <h3>Farine d'haricots</h3>
+          <div class="for">Pour : kpédjigaou, gaou, timbani</div>
+          <p>Des haricots déjà moulus pour le kpédjigaou, le gaou et le timbani. Existe en pot de 1 kg et de 1,5 kg.</p>
+          <div class="price"><small class="from">dès</small> <b>2 000</b> <small>F CFA</small></div>
+          <ul class="vars"><li><span>Pot de 1 kg</span><b>2 000 F CFA</b></li><li><span>Pot de 1,5 kg</span><b>3 000 F CFA</b></li></ul>
+          <a class="order wa" data-msg="Bonjour Ahoénouyé, je souhaite commander la farine d'haricots (1 kg 2 000 F CFA ou 1,5 kg 3 000 F CFA). Format souhaité : (1 kg ou 1,5 kg)." href="#">Commander <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+        </div>
+      </article>
+      <article class="card rv d2" data-cat="plat">
+        <div class="img"><img src="assets/ema.jpg" alt="Ema du maïs déshydraté pour kom" loading="lazy"><span class="pill r">Diaspora</span></div>
+        <div class="body">
+          <h3>Ema du maïs</h3>
+          <div class="for">Pour : kom, emakoumé</div>
+          <p>La pâte de maïs fermentée, déshydratée pour voyager. Le vrai kom, même à 6 000 km.</p>
+          <div class="price"><b>2 000</b> <small>F CFA</small></div>
+          <a class="order wa" data-msg="Bonjour Ahoénouyé, je souhaite commander l'Ema du maïs déshydraté (2 000 F CFA)." href="#">Commander <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+        </div>
+      </article>
+      <article class="card rv d3" data-cat="plat">
+        <div class="img"><img src="assets/ema-sorgho.jpg" alt="Ema du sorgho, petit et grand pot, avec kom et poisson frit" loading="lazy"><span class="pill">2 formats</span></div>
+        <div class="body">
+          <h3>Ema du sorgho</h3>
+          <div class="for">Pour : kom, emakoumé</div>
+          <p>L'ema à base de sorgho et de manioc, déshydraté pour voyager. Existe en petit et en grand pot.</p>
+          <div class="price"><small class="from">dès</small> <b>2 000</b> <small>F CFA</small></div>
+          <ul class="vars"><li><span>Petit pot</span><b>2 000 F CFA</b></li><li><span>Grand pot</span><b>4 000 F CFA</b></li></ul>
+          <a class="order wa" data-msg="Bonjour Ahoénouyé, je souhaite commander l'Ema du sorgho (petit pot 2 000 F CFA ou grand pot 4 000 F CFA). Format souhaité : (petit ou grand pot)." href="#">Commander <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+        </div>
+      </article>
+      <article class="card rv" data-cat="bouillie">
         <div class="img"><img src="assets/maizena.jpg" alt="Farine Maïzena pour akpan" loading="lazy"><span class="pill">Fraîcheur</span></div>
         <div class="body">
           <h3>Maïzena (Akpan)</h3>
@@ -578,7 +608,7 @@ footer a:hover{color:#fff}
           <a class="order wa" data-msg="Bonjour Ahoénouyé, je souhaite commander la Farine Maïzena pour Akpan (2 500 F CFA)." href="#">Commander <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
         </div>
       </article>
-      <article class="card rv" data-cat="plat">
+      <article class="card rv d1" data-cat="plat">
         <div class="img"><img src="assets/djinkoume.jpg" alt="Djinkoumé à la noix de coco" loading="lazy"><span class="pill y">Coco</span></div>
         <div class="body">
           <h3>Djinkoumé coco</h3>
@@ -588,18 +618,47 @@ footer a:hover{color:#fff}
           <a class="order wa" data-msg="Bonjour Ahoénouyé, je souhaite commander la Farine de Djinkoumé à la noix de coco (2 500 F CFA)." href="#">Commander <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
         </div>
       </article>
-      <article class="card rv d1" data-cat="bouillie">
-        <div class="img"><img src="assets/aklui.jpg" alt="Aklui zogbon et bouillie" loading="lazy"><span class="pill">VIP</span></div>
+      <article class="card rv d2" data-cat="bouillie">
+        <div class="img"><img src="assets/aklui-joie.jpg" alt="Aklui la joie et bouillie d'aklui aux épices" loading="lazy"><span class="pill y">Épicé</span></div>
         <div class="body">
-          <h3>Aklui</h3>
-          <div class="for">Pour : bouillie d'aklui, 4 variétés</div>
-          <p>Les petites billes roulées à la main. Avec des arachides grillées, un souvenir d'enfance.</p>
-          <div class="price"><small class="from">dès</small> <b>1 200</b> <small>F CFA</small></div>
-          <ul class="vars"><li><span>Aklui la joie</span><b>2 500 F CFA</b></li><li><span>Aklui du sorgho</span><b>1 200 F CFA</b></li><li><span>Aklui du mil</span><b>1 200 F CFA</b></li><li><span>Aklui maïs</span><b>1 200 F CFA</b></li></ul>
-          <a class="order wa" data-msg="Bonjour Ahoénouyé, je souhaite commander de l'Aklui. Variété souhaitée : (la joie, sorgho, mil ou maïs)." href="#">Commander <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+          <h3>Aklui la joie</h3>
+          <div class="for">Pour : bouillie d'aklui épicée</div>
+          <p>À base de mil, de gingembre, de clou de girofle et de souchet : l'aklui parfumé qui met de bonne humeur.</p>
+          <div class="price"><b>2 500</b> <small>F CFA</small></div>
+          <a class="order wa" data-msg="Bonjour Ahoénouyé, je souhaite commander l'Aklui la joie (2 500 F CFA)." href="#">Commander <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
         </div>
       </article>
-      <article class="card rv d1" data-cat="plat">
+      <article class="card rv d3" data-cat="bouillie">
+        <div class="img"><img src="assets/aklui-sorgho.jpg" alt="Aklui du sorgho et bouillie d'aklui" loading="lazy"><span class="pill">Sorgho</span></div>
+        <div class="body">
+          <h3>Aklui du sorgho</h3>
+          <div class="for">Pour : bouillie d'aklui</div>
+          <p>L'aklui à base de sorgho : la bouillie granulée, rustique et réconfortante.</p>
+          <div class="price"><b>1 200</b> <small>F CFA</small></div>
+          <a class="order wa" data-msg="Bonjour Ahoénouyé, je souhaite commander l'Aklui du sorgho (1 200 F CFA)." href="#">Commander <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+        </div>
+      </article>
+      <article class="card rv" data-cat="bouillie">
+        <div class="img"><img src="assets/aklui-mil.jpg" alt="Aklui du mil et bouillie d'aklui" loading="lazy"><span class="pill">Mil</span></div>
+        <div class="body">
+          <h3>Aklui du mil</h3>
+          <div class="for">Pour : bouillie d'aklui</div>
+          <p>L'aklui à base de mil : les petites billes roulées à la main, pour une bouillie généreuse.</p>
+          <div class="price"><b>1 200</b> <small>F CFA</small></div>
+          <a class="order wa" data-msg="Bonjour Ahoénouyé, je souhaite commander l'Aklui du mil (1 200 F CFA)." href="#">Commander <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+        </div>
+      </article>
+      <article class="card rv d1" data-cat="bouillie">
+        <div class="img"><img src="assets/aklui-mais.jpg" alt="Aklui maïs et bouillie d'aklui" loading="lazy"><span class="pill">Maïs</span></div>
+        <div class="body">
+          <h3>Aklui maïs</h3>
+          <div class="for">Pour : bouillie d'aklui</div>
+          <p>L'aklui à base de maïs, doux et crémeux, qui rappelle les petits-déjeuners d'enfance.</p>
+          <div class="price"><b>1 200</b> <small>F CFA</small></div>
+          <a class="order wa" data-msg="Bonjour Ahoénouyé, je souhaite commander l'Aklui maïs (1 200 F CFA)." href="#">Commander <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+        </div>
+      </article>
+      <article class="card rv d2" data-cat="plat">
         <div class="img"><img src="assets/telibo.jpg" alt="Farine d'igname Télibo, Olobo, Amala, pot de 1 kg, avec igname et pâte d'amala" loading="lazy"><span class="pill">Igname</span></div>
         <div class="body">
           <h3>Télibo, Olobo, Amala</h3>
@@ -609,7 +668,7 @@ footer a:hover{color:#fff}
           <a class="order wa" data-msg="Bonjour Ahoénouyé, je souhaite commander la farine Télibo, Olobo, Amala (2 500 F CFA)." href="#">Commander <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
         </div>
       </article>
-      <article class="card rv d2" data-cat="bouillie">
+      <article class="card rv d3" data-cat="bouillie">
         <div class="img"><img src="assets/akassan.jpg" alt="Farine d'Akassan en granulés avec un bol d'akassan et du maïs" loading="lazy"><span class="pill">Maïs</span></div>
         <div class="body">
           <h3>Granulés d'akassan</h3>
@@ -619,7 +678,7 @@ footer a:hover{color:#fff}
           <a class="order wa" data-msg="Bonjour Ahoénouyé, je souhaite commander les granulés d'akassan (1 000 F CFA)." href="#">Commander <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
         </div>
       </article>
-      <article class="card rv d3" data-cat="bouillie">
+      <article class="card rv" data-cat="bouillie">
         <div class="img"><img src="assets/bien-etre.jpg" alt="Farine Bien être +, petit et grand pot, entourés de dattes, souchet et céréales" loading="lazy"><span class="pill">2 formats</span></div>
         <div class="body">
           <h3>Bien être +</h3>
@@ -630,7 +689,7 @@ footer a:hover{color:#fff}
           <a class="order wa" data-msg="Bonjour Ahoénouyé, je souhaite commander la farine Bien être + (petit pot 3 500 F CFA ou grand pot 7 000 F CFA). Format souhaité : (petit ou grand pot)." href="#">Commander <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
         </div>
       </article>
-      <article class="card rv" data-cat="bouillie">
+      <article class="card rv d1" data-cat="bouillie">
         <div class="img"><img src="assets/soja.jpg" alt="Lait en poudre de soja avec un verre de lait et des graines de soja" loading="lazy"><span class="pill">Végétal</span></div>
         <div class="body">
           <h3>Lait en poudre de soja</h3>
@@ -640,7 +699,7 @@ footer a:hover{color:#fff}
           <a class="order wa" data-msg="Bonjour Ahoénouyé, je souhaite commander le lait en poudre de soja (2 000 F CFA)." href="#">Commander <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
         </div>
       </article>
-      <article class="card rv d1" data-cat="beignet">
+      <article class="card rv d2" data-cat="beignet">
         <div class="img"><img src="assets/botocoin.jpg" alt="Farine de Botocoin et beignets ronds dorés" loading="lazy"><span class="pill">Beignets</span></div>
         <div class="body">
           <h3>Farine de Botocoin</h3>
@@ -650,7 +709,7 @@ footer a:hover{color:#fff}
           <a class="order wa" data-msg="Bonjour Ahoénouyé, je souhaite commander la farine de Botocoin (1 500 F CFA)." href="#">Commander <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
         </div>
       </article>
-      <article class="card rv d2" data-cat="beignet">
+      <article class="card rv d3" data-cat="beignet">
         <div class="img"><img src="assets/gateau.jpg" alt="Farine de gâteau à la togolaise et gâteaux dorés" loading="lazy"><span class="pill">Blé</span></div>
         <div class="body">
           <h3>Farine de gâteau</h3>
