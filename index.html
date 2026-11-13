@@ -160,9 +160,9 @@ header.top .wrap{display:flex;align-items:center;justify-content:space-between;h
 .card.feature .body{flex:1;padding:30px}
 .card.feature h3{font-size:28px}
 .card.feature p{font-size:15px}
-.card.kit{grid-column:span 2;background:var(--g8) url("assets/gamme.jpg") right center/cover no-repeat;color:#fff;position:relative}
+.card.kit{grid-column:span 4;background:var(--g8) url("assets/gamme.jpg") right center/cover no-repeat;color:#fff;position:relative}
 .card.kit::before{content:"";position:absolute;inset:0;background:linear-gradient(90deg,var(--g8) 38%,rgba(14,59,34,.55) 70%,rgba(14,59,34,.1))}
-.card.kit .body{position:relative;justify-content:center;max-width:62%;padding:34px}
+.card.kit .body{position:relative;justify-content:center;max-width:52%;padding:44px}
 .card.kit .hand{color:var(--yellow);font-size:28px}
 .card.kit h3{font-size:30px;margin:4px 0 12px}
 .card.kit p{color:rgba(255,255,255,.82);flex:none;margin-bottom:22px;font-size:14.5px}
@@ -177,6 +177,7 @@ header.top .wrap{display:flex;align-items:center;justify-content:space-between;h
 .vars li{display:flex;justify-content:space-between;gap:10px;padding:6px 10px;border-radius:10px;background:var(--mint)}
 .vars b{color:var(--g8);white-space:nowrap}
 .catalog-link{display:flex;justify-content:center;margin-top:40px}
+.catalog-link .btn{white-space:normal;text-align:center;max-width:100%}
 .card.feature .price{font-size:30px}
 
 /* ===== STORY ===== */
@@ -326,6 +327,7 @@ footer a:hover{color:#fff}
 @media (max-width:1100px){
   .menu{display:none}
   .grid-p{grid-template-columns:repeat(2,1fr)}
+  .card.kit{grid-column:span 2}
   .why-grid,.story-grid,.dia-grid,.faq-grid,.asked-grid{grid-template-columns:1fr}
   .why-media{min-height:0;max-width:560px;margin:30px -28px 0 auto}
   .feats{grid-template-columns:repeat(2,1fr)}
@@ -499,7 +501,7 @@ footer a:hover{color:#fff}
       <div class="filters rv d2" aria-label="Filtrer les farines">
         <button class="on" data-f="all">Tout</button>
         <button data-f="plat">Plats</button>
-        <button data-f="bouillie">Bouillies</button>
+        <button data-f="bouillie">Bouillies & boissons</button>
         <button data-f="beignet">Beignets</button>
       </div>
     </div>
@@ -529,8 +531,8 @@ footer a:hover{color:#fff}
         <div class="body">
           <h3>Djèdjèviiii</h3>
           <div class="for">« Ma première farine »</div>
-          <p>Farine infantile naturellement sucrée à la datte, au souchet et à la patate douce.</p>
-          <div class="price"><b>2 500</b> <small>F CFA</small></div><div class="pnote">Version Koko ou farine : même prix</div>
+          <p>Farine infantile naturellement sucrée à la datte, au souchet et à la patate douce. Sur le pot : « pour les bébés de moins de 01 an ».</p>
+          <div class="price"><b>2 500</b> <small>F CFA</small></div>
           <a class="order wa" data-msg="Bonjour Ahoénouyé, je souhaite commander la farine infantile Djèdjèviiii (2 500 F CFA)." href="#">Commander <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
         </div>
       </article>
@@ -550,8 +552,9 @@ footer a:hover{color:#fff}
           <h3>Adowè & Haricots</h3>
           <div class="for">Pour : gaou, gaoufoto, adowè, timbani</div>
           <p>Haricots décortiqués et moulus : fini l'épluchage. Des beignets dorés et aériens.</p>
-          <div class="price"><b>2 000</b> <small>F CFA</small></div><div class="pnote">Adowè ou farine d'haricots : même prix</div>
-          <a class="order wa" data-msg="Bonjour Ahoénouyé, je souhaite commander la Farine Adowè / farine d'haricots (2 000 F CFA)." href="#">Commander <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+          <div class="price"><small class="from">dès</small> <b>2 000</b> <small>F CFA</small></div>
+          <ul class="vars"><li><span>Farine d'adowè</span><b>2 000 F CFA</b></li><li><span>Farine d'haricots 1 kg</span><b>2 000 F CFA</b></li><li><span>Farine d'haricots 1,5 kg</span><b>3 000 F CFA</b></li></ul>
+          <a class="order wa" data-msg="Bonjour Ahoénouyé, je souhaite commander la farine d'adowè (2 000 F CFA) ou la farine d'haricots (1 kg 2 000 F CFA, 1,5 kg 3 000 F CFA). Produit et format souhaités : " href="#">Commander <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
         </div>
       </article>
       <article class="card rv d2" data-cat="plat">
@@ -560,8 +563,9 @@ footer a:hover{color:#fff}
           <h3>Ema déshydraté</h3>
           <div class="for">Pour : kom, emakoumé</div>
           <p>La pâte de maïs fermentée, déshydratée pour voyager. Le vrai kom, même à 6 000 km.</p>
-          <div class="price"><b>2 000</b> <small>F CFA</small></div><div class="pnote">Ema de maïs ou de sorgho : même prix</div>
-          <a class="order wa" data-msg="Bonjour Ahoénouyé, je souhaite commander l'Ema déshydraté (2 000 F CFA)." href="#">Commander <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+          <div class="price"><small class="from">dès</small> <b>2 000</b> <small>F CFA</small></div>
+          <ul class="vars"><li><span>Ema du maïs</span><b>2 000 F CFA</b></li><li><span>Ema du sorgho, petit pot</span><b>2 000 F CFA</b></li><li><span>Ema du sorgho, grand pot</span><b>4 000 F CFA</b></li></ul>
+          <a class="order wa" data-msg="Bonjour Ahoénouyé, je souhaite commander l'Ema déshydraté (maïs 2 000 F CFA ; sorgho petit pot 2 000 F CFA, grand pot 4 000 F CFA). Produit et format souhaités : " href="#">Commander <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
         </div>
       </article>
       <article class="card rv d3" data-cat="bouillie">
@@ -593,6 +597,67 @@ footer a:hover{color:#fff}
           <div class="price"><small class="from">dès</small> <b>1 200</b> <small>F CFA</small></div>
           <ul class="vars"><li><span>Aklui la joie</span><b>2 500 F CFA</b></li><li><span>Aklui du sorgho</span><b>1 200 F CFA</b></li><li><span>Aklui du mil</span><b>1 200 F CFA</b></li><li><span>Aklui maïs</span><b>1 200 F CFA</b></li></ul>
           <a class="order wa" data-msg="Bonjour Ahoénouyé, je souhaite commander de l'Aklui. Variété souhaitée : (la joie, sorgho, mil ou maïs)." href="#">Commander <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+        </div>
+      </article>
+      <article class="card rv d1" data-cat="plat">
+        <div class="img"><img src="assets/telibo.jpg" alt="Farine d'igname Télibo, Olobo, Amala, pot de 1 kg, avec igname et pâte d'amala" loading="lazy"><span class="pill">Igname</span></div>
+        <div class="body">
+          <h3>Télibo, Olobo, Amala</h3>
+          <div class="for">Pour : télibo, olobo, amala · pot de 1 kg</div>
+          <p>La farine d'igname pour les pâtes d'igname brunes qu'on sert avec une bonne sauce. Fait à base d'igname.</p>
+          <div class="price"><b>2 500</b> <small>F CFA</small></div>
+          <a class="order wa" data-msg="Bonjour Ahoénouyé, je souhaite commander la farine Télibo, Olobo, Amala (2 500 F CFA)." href="#">Commander <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+        </div>
+      </article>
+      <article class="card rv d2" data-cat="bouillie">
+        <div class="img"><img src="assets/akassan.jpg" alt="Farine d'Akassan en granulés avec un bol d'akassan et du maïs" loading="lazy"><span class="pill">Maïs</span></div>
+        <div class="body">
+          <h3>Granulés d'akassan</h3>
+          <div class="for">Pour : akassan, crème de maïs</div>
+          <p>L'akassan, la crème de maïs du petit-déjeuner, en granulés prêts à préparer. Fait à base de maïs.</p>
+          <div class="price"><b>1 000</b> <small>F CFA</small></div>
+          <a class="order wa" data-msg="Bonjour Ahoénouyé, je souhaite commander les granulés d'akassan (1 000 F CFA)." href="#">Commander <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+        </div>
+      </article>
+      <article class="card rv d3" data-cat="bouillie">
+        <div class="img"><img src="assets/bien-etre.jpg" alt="Farine Bien être +, petit et grand pot, entourés de dattes, souchet et céréales" loading="lazy"><span class="pill">2 formats</span></div>
+        <div class="body">
+          <h3>Bien être +</h3>
+          <div class="for">Farine sucrée à la datte</div>
+          <p>Un mélange de céréales nutritif, sucré naturellement à la datte, à la patate douce et au souchet. Existe en petit et en grand pot.</p>
+          <div class="price"><small class="from">dès</small> <b>3 500</b> <small>F CFA</small></div>
+          <ul class="vars"><li><span>Petit pot</span><b>3 500 F CFA</b></li><li><span>Grand pot</span><b>7 000 F CFA</b></li></ul>
+          <a class="order wa" data-msg="Bonjour Ahoénouyé, je souhaite commander la farine Bien être + (petit pot 3 500 F CFA ou grand pot 7 000 F CFA). Format souhaité : (petit ou grand pot)." href="#">Commander <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+        </div>
+      </article>
+      <article class="card rv" data-cat="bouillie">
+        <div class="img"><img src="assets/soja.jpg" alt="Lait en poudre de soja avec un verre de lait et des graines de soja" loading="lazy"><span class="pill">Végétal</span></div>
+        <div class="body">
+          <h3>Lait en poudre de soja</h3>
+          <div class="for">Pour : lait de soja instantané</div>
+          <p>Un lait végétal instantané à base de soja, à préparer en un instant pour le petit-déjeuner ou le goûter.</p>
+          <div class="price"><b>2 000</b> <small>F CFA</small></div>
+          <a class="order wa" data-msg="Bonjour Ahoénouyé, je souhaite commander le lait en poudre de soja (2 000 F CFA)." href="#">Commander <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+        </div>
+      </article>
+      <article class="card rv d1" data-cat="beignet">
+        <div class="img"><img src="assets/botocoin.jpg" alt="Farine de Botocoin et beignets ronds dorés" loading="lazy"><span class="pill">Beignets</span></div>
+        <div class="body">
+          <h3>Farine de Botocoin</h3>
+          <div class="for">Pour : botocoin, beignets ronds</div>
+          <p>Les petits beignets ronds, dorés et moelleux du marché, avec une farine de blé facile à préparer.</p>
+          <div class="price"><b>1 500</b> <small>F CFA</small></div>
+          <a class="order wa" data-msg="Bonjour Ahoénouyé, je souhaite commander la farine de Botocoin (1 500 F CFA)." href="#">Commander <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+        </div>
+      </article>
+      <article class="card rv d2" data-cat="beignet">
+        <div class="img"><img src="assets/gateau.jpg" alt="Farine de gâteau à la togolaise et gâteaux dorés" loading="lazy"><span class="pill">Blé</span></div>
+        <div class="body">
+          <h3>Farine de gâteau</h3>
+          <div class="for">Pour : gâteau togolais</div>
+          <p>La farine pour le gâteau togolais : des beignets plats, dorés et gonflés. Fait à base de blé.</p>
+          <div class="price"><b>1 500</b> <small>F CFA</small></div>
+          <a class="order wa" data-msg="Bonjour Ahoénouyé, je souhaite commander la farine de gâteau à la togolaise (1 500 F CFA)." href="#">Commander <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
         </div>
       </article>
       <article class="card kit rv d2" data-cat="plat bouillie beignet">
@@ -753,7 +818,7 @@ footer a:hover{color:#fff}
       <details><summary>Livrez-vous hors du Togo ?</summary><p>Nos farines sont commandées au Togo, au Bénin, au Ghana et dans toute la diaspora. Donnez-nous votre pays et votre ville : on vous indique la meilleure solution d'envoi.</p></details>
       <details><summary>Est-ce difficile à préparer ?</summary><p>Non, c'est tout l'intérêt : le long travail est déjà fait. Chaque farine s'accompagne de conseils, et nos vidéos TikTok montrent chaque recette pas à pas.</p></details>
       <details><summary>Comment conserver les farines ?</summary><p>Dans leur pot bien fermé, au sec, à l'abri de la chaleur et de l'humidité. Les farines séchées comme l'Ema sont pensées pour se garder et voyager.</p></details>
-      <details><summary>Djèdjèviiii convient à quel âge ?</summary><p>Demandez-nous conseil sur WhatsApp : on vous indique l'âge recommandé, le dosage et la préparation. En cas de doute, l'avis de votre pédiatre reste la référence.</p></details>
+      <details><summary>Djèdjèviiii convient à quel âge ?</summary><p>L'étiquette du pot indique « première farine, pour les bébés de moins de 01 an ». Pour le dosage et la préparation, écris-nous sur WhatsApp. En cas de doute, l'avis de ton pédiatre reste la référence.</p></details>
     </div>
   </div>
 </section>
