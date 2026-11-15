@@ -177,6 +177,15 @@ header.top .wrap{display:flex;align-items:center;justify-content:space-between;h
 .card.kit .btn{align-self:flex-start}
 .card.kit:hover{transform:translateY(-8px)}
 
+.buyrow{margin-top:14px;display:flex;align-items:center;justify-content:space-between;gap:10px 14px;flex-wrap:wrap}
+.buyrow .price{margin-top:0}
+.qty{display:inline-flex;align-items:center;gap:2px;padding:3px;border-radius:999px;background:var(--mint);border:1.5px solid rgba(31,107,61,.18);flex:none}
+.qty button{width:34px;height:34px;border-radius:50%;border:0;background:#fff;color:var(--g8);font:700 20px/1 var(--sans,inherit);display:grid;place-items:center;cursor:pointer;box-shadow:0 2px 6px -2px rgba(14,59,34,.35);transition:background .2s,color .2s,transform .15s}
+.qty button:hover:not(:disabled){background:var(--g6);color:#fff}
+.qty button:active:not(:disabled){transform:scale(.92)}
+.qty button:disabled{opacity:.4;cursor:not-allowed;box-shadow:none}
+.qty button:focus-visible{outline:2px solid var(--g6);outline-offset:2px}
+.qty .qv{min-width:34px;text-align:center;font-weight:800;font-size:16px;color:var(--g8);font-variant-numeric:tabular-nums}
 .price{margin-top:14px;display:flex;align-items:baseline;gap:6px;color:var(--g8);font-weight:800;font-size:24px;letter-spacing:-.02em;line-height:1}
 .price small{font-size:13px;font-weight:600;color:var(--ink-2);letter-spacing:0}
 .price .from{font-size:12.5px}
@@ -969,19 +978,46 @@ footer a:hover{color:#fff}
     }).observe(stats);
   }
 
-  /* ---- Choix des formats : cases a cocher -> message WhatsApp adapte ---- */
+  /* ---- Quantite (− 1 +) a droite du prix, sur chaque produit ---- */
   function money(n){ return String(n).replace(/\B(?=(\d{3})+(?!\d))/g, " "); }
+  document.querySelectorAll(".card .price").forEach(function(price){
+    var card = price.closest(".card"), row = document.createElement("div");
+    row.className = "buyrow";
+    price.parentNode.insertBefore(row, price); row.appendChild(price);
+    var q = document.createElement("div");
+    q.className = "qty"; q.setAttribute("role", "group"); q.setAttribute("aria-label", "Quantité");
+    q.innerHTML = '<button type="button" class="qm" aria-label="Diminuer la quantité" disabled>−</button><output class="qv" aria-live="polite">1</output><button type="button" class="qp" aria-label="Augmenter la quantité">+</button>';
+    row.appendChild(q);
+    var minus = q.querySelector(".qm"), plus = q.querySelector(".qp"), out = q.querySelector(".qv");
+    card._q = 1;
+    var simple = !card.querySelector(".opts"), btn = card.querySelector(".order");
+    var name = (card.querySelector("h3") || {}).textContent || "", unit = Number((price.querySelector("b") || {}).textContent.replace(/\D/g, ""));
+    function set(n){
+      card._q = Math.max(1, Math.min(99, n));
+      out.textContent = card._q;
+      minus.disabled = card._q <= 1; plus.disabled = card._q >= 99;
+      if (simple && btn) {
+        btn.href = card._q === 1 ? "https://wa.me/" + PHONE + "?text=" + encodeURIComponent(btn.getAttribute("data-msg"))
+          : "https://wa.me/" + PHONE + "?text=" + encodeURIComponent("Bonjour Ahoénouyé, je souhaite commander :\n• " + card._q + " × " + name.trim() + " : " + money(unit * card._q) + " F CFA (" + money(unit) + " F CFA l'unité)");
+      }
+      card.dispatchEvent(new Event("qty"));
+    }
+    minus.addEventListener("click", function(){ set(card._q - 1); });
+    plus.addEventListener("click", function(){ set(card._q + 1); });
+  });
+
+  /* ---- Choix des formats : cases a cocher -> message WhatsApp adapte ---- */
   document.querySelectorAll(".opts").forEach(function(box){
     var card = box.closest(".card"), btn = card.querySelector(".order"), lab = btn.querySelector(".olabel");
     var hint = card.querySelector(".opt-hint"), product = box.getAttribute("data-product");
     var inputs = [].slice.call(box.querySelectorAll("input[type=checkbox]"));
     function update(){
-      var chosen = inputs.filter(function(i){ return i.checked; });
+      var chosen = inputs.filter(function(i){ return i.checked; }), qn = card._q || 1;
       inputs.forEach(function(i){ i.closest(".opt").classList.toggle("on", i.checked); });
-      var total = chosen.reduce(function(a, i){ return a + Number(i.getAttribute("data-price")); }, 0);
+      var total = chosen.reduce(function(a, i){ return a + Number(i.getAttribute("data-price")) * qn; }, 0);
       lab.textContent = chosen.length ? "Commander · " + money(total) + " F CFA" : "Commander";
       if (chosen.length) {
-        var lines = chosen.map(function(i){ return "• " + product + ", " + i.getAttribute("data-label") + " : " + money(i.getAttribute("data-price")) + " F CFA"; });
+        var lines = chosen.map(function(i){ var p = Number(i.getAttribute("data-price")); return "• " + (qn > 1 ? qn + " × " : "") + product + ", " + i.getAttribute("data-label") + " : " + money(p * qn) + " F CFA"; });
         var msg = "Bonjour Ahoénouyé, je souhaite commander :\n" + lines.join("\n") + (chosen.length > 1 ? "\nTotal : " + money(total) + " F CFA" : "");
         btn.href = "https://wa.me/" + PHONE + "?text=" + encodeURIComponent(msg);
         hint.hidden = true;
@@ -990,6 +1026,7 @@ footer a:hover{color:#fff}
       }
     }
     inputs.forEach(function(i){ i.addEventListener("change", update); });
+    card.addEventListener("qty", update);
     btn.addEventListener("click", function(e){
       if (!inputs.some(function(i){ return i.checked; })) { e.preventDefault(); hint.hidden = false; }
     });
