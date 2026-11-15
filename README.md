@@ -1,6 +1,6 @@
 # Ahoénouyé — Farines traditionnelles du Togo
 
-Page de vente one page pour Ahoénouyé (Lomé, Togo) : Ablo, Foufou, Koko, Adowè, Djèdjèviiii, Ema, Akpan, Djinkoumé, Aklui.
+Page de vente one page pour Ahoénouyé (Lomé, Togo) : Ablo, Foufou, Koko, Adowè, Djédjéviii, Ema, Akpan, Djinkoumé, Aklui.
 
 - Site statique : `index.html` + images dans `assets/`
 - Commandes : tous les boutons ouvrent WhatsApp (+228 79 42 85 55) avec un message prérempli
