@@ -5,9 +5,17 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Ahoénouyé — Farines traditionnelles du Togo</title>
 <meta name="description" content="Ablo, Foufou, Koko, Adowè, Djèdjèviiii, Ema, Akpan… Les farines traditionnelles togolaises préparées comme à la maison. Le goût de chez nous, prêt en quelques minutes. Commandez sur WhatsApp.">
-<meta property="og:title" content="Ahoénouyé — Le goût de la maison, prêt en quelques minutes">
-<meta property="og:description" content="Farines traditionnelles togolaises préparées comme à la maison. Lomé · Diaspora.">
-<meta property="og:image" content="assets/hero.jpg">
+<link rel="canonical" href="https://ahoenouye.com/">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Ahoénouyé">
+<meta property="og:locale" content="fr_FR">
+<meta property="og:url" content="https://ahoenouye.com/">
+<meta property="og:title" content="Ahoénouyé — Le goût de la maison, sans la corvée">
+<meta property="og:description" content="21 farines traditionnelles togolaises préparées comme à la maison : ablo, foufou, koko, aklui, ema… Prix en F CFA, commande sur WhatsApp.">
+<meta property="og:image" content="https://ahoenouye.com/assets/hero.jpg">
+<meta property="og:image:width" content="1800">
+<meta property="og:image:height" content="1005">
+<meta name="twitter:card" content="summary_large_image">
 <meta name="theme-color" content="#0E3B22">
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Ccircle cx='32' cy='32' r='32' fill='%230E3B22'/%3E%3Cpath d='M18 46c0-16 10-26 28-28 0 18-10 28-28 28z' fill='%23F4C21B'/%3E%3Ccircle cx='44' cy='44' r='7' fill='%23E3262B'/%3E%3C/svg%3E">
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -176,6 +184,17 @@ header.top .wrap{display:flex;align-items:center;justify-content:space-between;h
 .vars{list-style:none;margin-top:12px;display:grid;gap:6px;font-size:13px}
 .vars li{display:flex;justify-content:space-between;gap:10px;padding:6px 10px;border-radius:10px;background:var(--mint)}
 .vars b{color:var(--g8);white-space:nowrap}
+.opts{border:0;margin:12px 0 0;padding:0;display:grid;gap:6px;min-width:0}
+.opts legend{font-size:12px;font-weight:600;color:var(--ink-2);padding:0;margin-bottom:6px}
+.opt{display:flex;align-items:center;gap:10px;padding:9px 11px;border-radius:12px;background:var(--mint);border:1.5px solid transparent;font-size:13px;cursor:pointer;transition:border-color .2s,background .2s,box-shadow .2s}
+.opt input{width:18px;height:18px;accent-color:var(--g6);flex:none;margin:0;cursor:pointer}
+.opt .ot{flex:1;min-width:0}
+.opt b{color:var(--g8);white-space:nowrap}
+.opt.on{background:#fff;border-color:var(--g6);box-shadow:0 0 0 3px rgba(31,107,61,.12)}
+.opt:focus-within{outline:2px solid var(--g6);outline-offset:2px}
+.opt-hint{margin-top:8px;font-size:12.5px;font-weight:600;color:var(--red)}
+.opt-hint[hidden]{display:none}
+.card .order .olabel{min-width:0}
 .catalog-link{display:flex;justify-content:center;margin-top:40px}
 .catalog-link .btn{white-space:normal;text-align:center;max-width:100%}
 .card.feature .price{font-size:30px}
@@ -573,8 +592,9 @@ footer a:hover{color:#fff}
           <div class="for">Pour : kpédjigaou, gaou, timbani</div>
           <p>Des haricots déjà moulus pour le kpédjigaou, le gaou et le timbani. Existe en pot de 1 kg et de 1,5 kg.</p>
           <div class="price"><small class="from">dès</small> <b>2 000</b> <small>F CFA</small></div>
-          <ul class="vars"><li><span>Pot de 1 kg</span><b>2 000 F CFA</b></li><li><span>Pot de 1,5 kg</span><b>3 000 F CFA</b></li></ul>
-          <a class="order wa" data-msg="Bonjour Ahoénouyé, je souhaite commander la farine d'haricots (1 kg 2 000 F CFA ou 1,5 kg 3 000 F CFA). Format souhaité : (1 kg ou 1,5 kg)." href="#">Commander <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+          <fieldset class="opts" data-product="Farine d'haricots"><legend>Cochez les formats à commander</legend><label class="opt" for="haricots-f1"><input type="checkbox" id="haricots-f1" data-label="pot de 1 kg" data-price="2000"><span class="ot">Pot de 1 kg</span><b>2 000 F CFA</b></label><label class="opt" for="haricots-f2"><input type="checkbox" id="haricots-f2" data-label="pot de 1,5 kg" data-price="3000"><span class="ot">Pot de 1,5 kg</span><b>3 000 F CFA</b></label></fieldset>
+          <div class="opt-hint" role="status" hidden>Cochez au moins un format pour commander.</div>
+          <a class="order wa" data-msg="Bonjour Ahoénouyé, je souhaite commander Farine d'haricots." href="#"><span class="olabel">Commander</span> <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
         </div>
       </article>
       <article class="card rv d2" data-cat="plat">
@@ -594,8 +614,9 @@ footer a:hover{color:#fff}
           <div class="for">Pour : kom, emakoumé</div>
           <p>L'ema à base de sorgho et de manioc, déshydraté pour voyager. Existe en petit et en grand pot.</p>
           <div class="price"><small class="from">dès</small> <b>2 000</b> <small>F CFA</small></div>
-          <ul class="vars"><li><span>Petit pot</span><b>2 000 F CFA</b></li><li><span>Grand pot</span><b>4 000 F CFA</b></li></ul>
-          <a class="order wa" data-msg="Bonjour Ahoénouyé, je souhaite commander l'Ema du sorgho (petit pot 2 000 F CFA ou grand pot 4 000 F CFA). Format souhaité : (petit ou grand pot)." href="#">Commander <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+          <fieldset class="opts" data-product="Ema du sorgho"><legend>Cochez les formats à commander</legend><label class="opt" for="ema-sorgho-f1"><input type="checkbox" id="ema-sorgho-f1" data-label="petit pot" data-price="2000"><span class="ot">Petit pot</span><b>2 000 F CFA</b></label><label class="opt" for="ema-sorgho-f2"><input type="checkbox" id="ema-sorgho-f2" data-label="grand pot" data-price="4000"><span class="ot">Grand pot</span><b>4 000 F CFA</b></label></fieldset>
+          <div class="opt-hint" role="status" hidden>Cochez au moins un format pour commander.</div>
+          <a class="order wa" data-msg="Bonjour Ahoénouyé, je souhaite commander Ema du sorgho." href="#"><span class="olabel">Commander</span> <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
         </div>
       </article>
       <article class="card rv" data-cat="bouillie">
@@ -685,8 +706,9 @@ footer a:hover{color:#fff}
           <div class="for">Farine sucrée à la datte</div>
           <p>Un mélange de céréales nutritif, sucré naturellement à la datte, à la patate douce et au souchet. Existe en petit et en grand pot.</p>
           <div class="price"><small class="from">dès</small> <b>3 500</b> <small>F CFA</small></div>
-          <ul class="vars"><li><span>Petit pot</span><b>3 500 F CFA</b></li><li><span>Grand pot</span><b>7 000 F CFA</b></li></ul>
-          <a class="order wa" data-msg="Bonjour Ahoénouyé, je souhaite commander la farine Bien être + (petit pot 3 500 F CFA ou grand pot 7 000 F CFA). Format souhaité : (petit ou grand pot)." href="#">Commander <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+          <fieldset class="opts" data-product="Bien être +"><legend>Cochez les formats à commander</legend><label class="opt" for="bien-etre-f1"><input type="checkbox" id="bien-etre-f1" data-label="petit pot" data-price="3500"><span class="ot">Petit pot</span><b>3 500 F CFA</b></label><label class="opt" for="bien-etre-f2"><input type="checkbox" id="bien-etre-f2" data-label="grand pot" data-price="7000"><span class="ot">Grand pot</span><b>7 000 F CFA</b></label></fieldset>
+          <div class="opt-hint" role="status" hidden>Cochez au moins un format pour commander.</div>
+          <a class="order wa" data-msg="Bonjour Ahoénouyé, je souhaite commander Bien être +." href="#"><span class="olabel">Commander</span> <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
         </div>
       </article>
       <article class="card rv d1" data-cat="bouillie">
@@ -948,6 +970,33 @@ footer a:hover{color:#fff}
       });
     }).observe(stats);
   }
+
+  /* ---- Choix des formats : cases a cocher -> message WhatsApp adapte ---- */
+  function money(n){ return String(n).replace(/\B(?=(\d{3})+(?!\d))/g, " "); }
+  document.querySelectorAll(".opts").forEach(function(box){
+    var card = box.closest(".card"), btn = card.querySelector(".order"), lab = btn.querySelector(".olabel");
+    var hint = card.querySelector(".opt-hint"), product = box.getAttribute("data-product");
+    var inputs = [].slice.call(box.querySelectorAll("input[type=checkbox]"));
+    function update(){
+      var chosen = inputs.filter(function(i){ return i.checked; });
+      inputs.forEach(function(i){ i.closest(".opt").classList.toggle("on", i.checked); });
+      var total = chosen.reduce(function(a, i){ return a + Number(i.getAttribute("data-price")); }, 0);
+      lab.textContent = chosen.length ? "Commander · " + money(total) + " F CFA" : "Commander";
+      if (chosen.length) {
+        var lines = chosen.map(function(i){ return "• " + product + ", " + i.getAttribute("data-label") + " : " + money(i.getAttribute("data-price")) + " F CFA"; });
+        var msg = "Bonjour Ahoénouyé, je souhaite commander :\n" + lines.join("\n") + (chosen.length > 1 ? "\nTotal : " + money(total) + " F CFA" : "");
+        btn.href = "https://wa.me/" + PHONE + "?text=" + encodeURIComponent(msg);
+        hint.hidden = true;
+      } else {
+        btn.href = "#";
+      }
+    }
+    inputs.forEach(function(i){ i.addEventListener("change", update); });
+    btn.addEventListener("click", function(e){
+      if (!inputs.some(function(i){ return i.checked; })) { e.preventDefault(); hint.hidden = false; }
+    });
+    update();
+  });
 
   /* ---- Scroll effects: parallax, rotation, sticky bar ---- */
   var reduce = matchMedia("(prefers-reduced-motion: reduce)").matches;
