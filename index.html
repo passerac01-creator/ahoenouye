@@ -179,6 +179,8 @@ header.top .wrap{display:flex;align-items:center;justify-content:space-between;h
 
 .buyrow{margin-top:14px;display:flex;align-items:center;justify-content:space-between;gap:10px 14px;flex-wrap:wrap}
 .buyrow .price{margin-top:0}
+.qtyw{display:inline-flex;align-items:center;gap:8px;margin-left:auto}
+.qlab{font-size:12px;font-weight:600;color:var(--ink-2);letter-spacing:0}
 .qty{display:inline-flex;align-items:center;gap:2px;padding:3px;border-radius:999px;background:var(--mint);border:1.5px solid rgba(31,107,61,.18);flex:none}
 .qty button{width:34px;height:34px;border-radius:50%;border:0;background:#fff;color:var(--g8);font:700 20px/1 var(--sans,inherit);display:grid;place-items:center;cursor:pointer;box-shadow:0 2px 6px -2px rgba(14,59,34,.35);transition:background .2s,color .2s,transform .15s}
 .qty button:hover:not(:disabled){background:var(--g6);color:#fff}
@@ -987,7 +989,9 @@ footer a:hover{color:#fff}
     var q = document.createElement("div");
     q.className = "qty"; q.setAttribute("role", "group"); q.setAttribute("aria-label", "Quantité");
     q.innerHTML = '<button type="button" class="qm" aria-label="Diminuer la quantité" disabled>−</button><output class="qv" aria-live="polite">1</output><button type="button" class="qp" aria-label="Augmenter la quantité">+</button>';
-    row.appendChild(q);
+    var qw = document.createElement("div"); qw.className = "qtyw";
+    qw.innerHTML = '<span class="qlab" aria-hidden="true">Quantité</span>';
+    qw.appendChild(q); row.appendChild(qw);
     var minus = q.querySelector(".qm"), plus = q.querySelector(".qp"), out = q.querySelector(".qv");
     card._q = 1;
     var simple = !card.querySelector(".opts"), btn = card.querySelector(".order");
